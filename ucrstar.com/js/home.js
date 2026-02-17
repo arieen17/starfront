@@ -19,6 +19,9 @@
   let allDatasets = [];
   let searchMarker = null;
   let datasetExtentLayerReady = false;
+  let regionsData = null;
+  let currentDownloadScope = "visible";
+  let currentDownloadRegion = null;
   const MAX_SUGGESTIONS = 10;
   const PLACE_TAG_REGEX = /^[a-zA-Z\s]+$/;
   const NAV_TAGS = ["Riverside", "OSM2015", "NE", "TIGER2018"];
@@ -1002,32 +1005,204 @@
       ?.addEventListener("click", openShareModal);
     document
       .querySelector(".preview-download")
-      ?.addEventListener("click", function () {
-        var link = getShareLink();
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(link).then(
-            function () {
-              if (typeof window.alert === "function")
-                window.alert("Link copied to clipboard");
-            },
-            function () {
-              window.prompt("Copy this link:", link);
-            },
-          );
+      ?.addEventListener("click", openDownloadModal);
+  }
+
+  function loadRegions() {
+    fetch(UCR_STAR_API + "/regions.json")
+      .then(function (r) {
+        return r.ok ? r.json() : null;
+      })
+      .then(function (data) {
+        if (data) regionsData = data;
+      })
+      .catch(function () {});
+  }
+
+  function getDownloadUrl(datasetName, format, scope, mbr, region) {
+    if (!datasetName || !format) return null;
+    var base =
+      UCR_STAR_API +
+      "/datasets/" +
+      encodeURIComponent(datasetName) +
+      "/download." +
+      format;
+    if (scope === "visible" && mbr) {
+      return base + "?mbr=" + mbr[0] + "," + mbr[1] + "," + mbr[2] + "," + mbr[3];
+    } else if (scope === "region" && region) {
+      return base + "?region=" + encodeURIComponent(region);
+    }
+    return base;
+  }
+
+  function getMapBounds() {
+    if (!map) return null;
+    var bounds = map.getBounds();
+    if (!bounds) return null;
+    var sw = bounds.getSouthWest();
+    var ne = bounds.getNorthEast();
+    return [sw.lng, sw.lat, ne.lng, ne.lat];
+  }
+
+  function openDownloadModal() {
+    var card = document.getElementById("dataset-preview");
+    if (!card || card.classList.contains("hidden")) return;
+    var idx = parseInt(card.getAttribute("data-index"), 10);
+    var d = datasets[idx];
+    if (!d || !d.name) return;
+    currentDownloadScope = "visible";
+    currentDownloadRegion = null;
+    document.getElementById("download-modal-overlay")?.classList.remove("hidden");
+    document
+      .getElementById("download-modal-overlay")
+      ?.setAttribute("aria-hidden", "false");
+    updateDownloadScopeText();
+    if (!regionsData) loadRegions();
+  }
+
+  function closeDownloadModal() {
+    document.getElementById("download-modal-overlay")?.classList.add("hidden");
+    document
+      .getElementById("download-modal-overlay")
+      ?.setAttribute("aria-hidden", "true");
+    var regionSearch = document.getElementById("download-region-search");
+    if (regionSearch) regionSearch.classList.add("hidden");
+    var suggestions = document.getElementById("download-region-suggestions");
+    if (suggestions) suggestions.classList.remove("visible");
+  }
+
+  function updateDownloadScopeText() {
+    var textEl = document.getElementById("download-scope-text");
+    if (!textEl) return;
+    if (currentDownloadScope === "full") {
+      textEl.textContent = "entire";
+    } else if (currentDownloadScope === "visible") {
+      textEl.textContent = "visible part";
+    } else if (currentDownloadScope === "region") {
+      textEl.textContent = "selected region";
+    }
+  }
+
+  function handleDownloadFormat(format, label) {
+    var card = document.getElementById("dataset-preview");
+    if (!card || card.classList.contains("hidden")) return;
+    var idx = parseInt(card.getAttribute("data-index"), 10);
+    var d = datasets[idx];
+    if (!d || !d.name) return;
+    var url = null;
+    var mbr = null;
+    if (currentDownloadScope === "visible") {
+      mbr = getMapBounds();
+      url = getDownloadUrl(d.name, format, "visible", mbr, null);
+    } else if (currentDownloadScope === "region" && currentDownloadRegion) {
+      url = getDownloadUrl(d.name, format, "region", null, currentDownloadRegion);
+    } else if (currentDownloadScope === "full") {
+      url = getDownloadUrl(d.name, format, "full", null, null);
+    }
+    if (url) {
+      window.open(url, "_blank");
+      closeDownloadModal();
+    }
+  }
+
+  function wireDownloadModal() {
+    document
+      .querySelector(".download-modal-close")
+      ?.addEventListener("click", closeDownloadModal);
+    document
+      .getElementById("download-modal-overlay")
+      ?.addEventListener("click", function (e) {
+        if (e.target === this) closeDownloadModal();
+      });
+    document.querySelectorAll(".download-scope-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var scope = this.dataset.scope;
+        document.querySelectorAll(".download-scope-btn").forEach(function (b) {
+          b.classList.remove("active");
+        });
+        this.classList.add("active");
+        currentDownloadScope = scope;
+        var regionSearch = document.getElementById("download-region-search");
+        if (scope === "region") {
+          if (regionSearch) regionSearch.classList.remove("hidden");
         } else {
-          window.prompt("Copy this link:", link);
+          if (regionSearch) regionSearch.classList.add("hidden");
+          currentDownloadRegion = null;
+        }
+        updateDownloadScopeText();
+      });
+    });
+    document.querySelectorAll(".download-format-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var format = this.dataset.format;
+        var label = this.dataset.label || format;
+        handleDownloadFormat(format, label);
+      });
+    });
+    var regionInput = document.getElementById("download-region-input");
+    if (regionInput) {
+      regionInput.addEventListener("input", function () {
+        var q = (this.value || "").trim().toLowerCase();
+        var suggestionsEl = document.getElementById("download-region-suggestions");
+        if (!suggestionsEl || !regionsData) return;
+        suggestionsEl.innerHTML = "";
+        if (!q) {
+          suggestionsEl.classList.remove("visible");
+          return;
+        }
+        var matches = [];
+        for (var code in regionsData) {
+          var r = regionsData[code];
+          var searchNames = r.search_names || [];
+          var displayName = r.display_name || code;
+          var match = false;
+          if (code.toLowerCase().indexOf(q) !== -1) match = true;
+          if (displayName.toLowerCase().indexOf(q) !== -1) match = true;
+          for (var i = 0; i < searchNames.length; i++) {
+            if (searchNames[i].toLowerCase().indexOf(q) !== -1) {
+              match = true;
+              break;
+            }
+          }
+          if (match) matches.push({ code: code, display: displayName });
+        }
+        if (matches.length > 0) {
+          matches.slice(0, 10).forEach(function (m) {
+            var item = document.createElement("button");
+            item.type = "button";
+            item.className = "download-region-item";
+            item.textContent = m.display + " (" + m.code + ")";
+            item.addEventListener("click", function () {
+              currentDownloadRegion = m.code;
+              regionInput.value = m.display + " (" + m.code + ")";
+              suggestionsEl.classList.remove("visible");
+            });
+            suggestionsEl.appendChild(item);
+          });
+          suggestionsEl.classList.add("visible");
+        } else {
+          suggestionsEl.classList.remove("visible");
         }
       });
+      regionInput.addEventListener("blur", function () {
+        setTimeout(function () {
+          var suggestionsEl = document.getElementById("download-region-suggestions");
+          if (suggestionsEl) suggestionsEl.classList.remove("visible");
+        }, 200);
+      });
+    }
   }
 
   function init() {
     createMap();
     loadDatasets();
+    loadRegions();
     wireSearch();
     wireSearchToMap();
     wireDrawer();
     wirePreview();
     wireShareModal();
+    wireDownloadModal();
   }
 
   if (document.readyState === "loading") {

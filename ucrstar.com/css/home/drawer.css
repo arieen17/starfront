@@ -110,3 +110,34 @@
   opacity: 1;
   pointer-events: auto;
 }
+
+/* ----- Responsive: drawer adjustments ----- */
+@media (max-width: 480px) {
+  .drawer {
+    width: 85vw;
+    max-width: 320px;
+  }
+
+  .drawer-header {
+    padding: 12px;
+  }
+
+  .drawer-title {
+    font-size: 1rem;
+  }
+
+  .drawer-close {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+
+  .drawer-item {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .drawer-item span {
+    font-size: 11px;
+  }
+}

@@ -352,6 +352,168 @@
           </div>
         </div>
       </div>
+
+      <div
+        class="download-modal-overlay hidden"
+        id="download-modal-overlay"
+        aria-hidden="true"
+      >
+        <div
+          class="download-modal"
+          id="download-modal"
+          role="dialog"
+          aria-labelledby="download-modal-title"
+        >
+          <button type="button" class="download-modal-close" aria-label="Close">
+            &times;
+          </button>
+          <div class="download-modal-content">
+            <div class="download-scope-section">
+              <p class="download-instruction" id="download-modal-title">
+                Alternatively, the following links download a cached copy of the
+                dataset in one of standard formats.
+              </p>
+              <div class="download-scope-options">
+                <button
+                  type="button"
+                  class="download-scope-btn"
+                  data-scope="full"
+                  aria-label="Full Dataset"
+                >
+                  <span>Full Dataset</span>
+                  <span class="download-scope-icons" aria-hidden="true">
+                    <svg
+                      class="download-scope-check"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      width="16"
+                      height="16"
+                    >
+                      <path
+                        d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="download-scope-btn active"
+                  data-scope="visible"
+                  aria-label="Visible Area"
+                >
+                  <span>Visible Area</span>
+                  <span class="download-scope-icons" aria-hidden="true">
+                    <svg
+                      class="download-scope-check"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      width="16"
+                      height="16"
+                    >
+                      <path
+                        d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="download-scope-btn"
+                  data-scope="region"
+                  aria-label="Search for a Region"
+                >
+                  <span>Search for a Region</span>
+                  <span class="download-scope-icons" aria-hidden="true">
+                    <svg
+                      class="download-scope-check"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      width="16"
+                      height="16"
+                    >
+                      <path
+                        d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div
+                id="download-region-search"
+                class="download-region-search hidden"
+              >
+                <input
+                  type="text"
+                  id="download-region-input"
+                  class="download-region-input"
+                  placeholder="Search region (e.g., US-CA, USA)"
+                />
+                <div
+                  id="download-region-suggestions"
+                  class="download-region-suggestions"
+                ></div>
+              </div>
+            </div>
+            <div class="download-modal-divider" aria-hidden="true"></div>
+            <div class="download-format-section">
+              <p class="download-format-description">
+                Download the
+                <span id="download-scope-text">visible part</span> of the
+                dataset in the following standard formats.
+              </p>
+              <div class="download-format-buttons">
+                <div class="download-format-row1">
+                  <button
+                    type="button"
+                    class="download-format-btn"
+                    data-format="zip"
+                    data-label="Shapefile"
+                  >
+                    Shapefile
+                  </button>
+                  <button
+                    type="button"
+                    class="download-format-btn"
+                    data-format="kmz"
+                    data-label="KML"
+                  >
+                    KML
+                  </button>
+                  <button
+                    type="button"
+                    class="download-format-btn"
+                    data-format="geojson.gz"
+                    data-label="GeoJSON"
+                  >
+                    GeoJSON
+                  </button>
+                </div>
+                <div class="download-format-row2">
+                  <button
+                    type="button"
+                    class="download-format-btn"
+                    data-format="json.gz"
+                    data-label="JSON+WKT"
+                  >
+                    JSON+WKT
+                  </button>
+                  <button
+                    type="button"
+                    class="download-format-btn"
+                    data-format="csv.gz"
+                    data-label="CSV"
+                  >
+                    CSV
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="js/home.js"></script>

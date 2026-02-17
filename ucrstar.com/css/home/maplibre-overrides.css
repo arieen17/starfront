@@ -22,3 +22,101 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   transform: translate(-50%, -50%);
 }
+
+/* ----- Responsive: MapLibre attribution and controls ----- */
+@media (max-width: 768px) {
+  .maplibregl-ctrl-bottom-right {
+    bottom: 6px;
+    right: 12px;
+  }
+
+  .maplibregl-ctrl-attrib {
+    font-size: 9px;
+    padding: 2px 4px;
+    max-width: 200px;
+  }
+
+  .maplibregl-ctrl-logo {
+    width: 60px;
+    height: 20px;
+  }
+
+  .map-controls {
+    bottom: 38px;
+    right: 12px;
+    gap: 3px;
+  }
+
+  .map-controls button {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .map-controls button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .map-footer {
+    bottom: 12px;
+    left: 12px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .maplibregl-ctrl-bottom-right {
+    bottom: 4px;
+    right: 8px;
+  }
+
+  .maplibregl-ctrl-attrib {
+    font-size: 8px;
+    padding: 2px 3px;
+    max-width: 160px;
+    line-height: 1.2;
+  }
+
+  .maplibregl-ctrl-logo {
+    width: 50px;
+    height: 18px;
+  }
+
+  .map-controls {
+    bottom: 32px;
+    right: 8px;
+    gap: 2px;
+  }
+
+  .map-controls button {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+
+  .map-controls .zoom-in {
+    border-radius: 3px 3px 0 0;
+  }
+
+  .map-controls .zoom-out {
+    border-radius: 0 0 3px 3px;
+  }
+
+  .map-controls .location-btn {
+    border-radius: 3px;
+    margin-top: 2px;
+  }
+
+  .map-controls button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .map-footer {
+    bottom: 8px;
+    left: 8px;
+    font-size: 9px;
+  }
+}

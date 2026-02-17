@@ -84,3 +84,74 @@
   color: #666;
   padding: 0;
 }
+
+/* ----- Responsive: condense sidebar on smaller screens ----- */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 64px;
+    padding: 10px 6px;
+  }
+
+  .sidebar-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .sidebar-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sidebar-brand .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .sidebar-brand .brand-text {
+    font-size: 0.65rem;
+  }
+
+  .sidebar-brand .sidebar-copy {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 56px;
+    padding: 8px 4px;
+  }
+
+  .sidebar-nav {
+    gap: 3px;
+  }
+
+  .sidebar-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+  }
+
+  .sidebar-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .sidebar-brand {
+    gap: 4px;
+    padding: 6px 0;
+  }
+
+  .sidebar-brand .brand-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .sidebar-brand .brand-text {
+    font-size: 0.6rem;
+  }
+
+  .sidebar-brand .sidebar-copy {
+    font-size: 8px;
+  }
+}

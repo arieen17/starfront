@@ -1,0 +1,268 @@
+/* ----- Download modal ----- */
+.download-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.download-modal-overlay.hidden {
+  display: none;
+}
+
+.download-modal {
+  position: relative;
+  width: 90%;
+  max-width: 680px;
+  min-width: 320px;
+  min-height: 240px;
+  height: 33vh;
+  max-height: 85vh;
+  overflow: auto;
+  background: #eff5f6;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.download-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0;
+}
+
+.download-modal-close:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: #333;
+}
+
+.download-instruction {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.download-modal-content {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+.download-scope-section {
+  flex: 0 1 auto;
+  min-width: 200px;
+  max-width: 280px;
+  padding-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.download-modal-divider {
+  width: 1px;
+  min-width: 1px;
+  align-self: stretch;
+  flex-shrink: 0;
+  background: #bbb;
+}
+
+.download-format-section {
+  flex: 1;
+  min-width: 200px;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-scope-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.download-scope-icons {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.download-scope-btn.active .download-scope-icons {
+  display: inline-flex;
+}
+
+.download-scope-check {
+  flex-shrink: 0;
+}
+
+.download-scope-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+  text-align: left;
+}
+
+.download-scope-btn:hover {
+  color: #1a1a1a;
+}
+
+.download-scope-btn.active {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.download-region-search {
+  margin-top: 12px;
+}
+
+.download-format-description {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+}
+
+.download-format-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.download-format-row1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: max-content;
+}
+
+.download-format-row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.download-region-search.hidden {
+  display: none;
+}
+
+.download-region-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.download-region-input:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+.download-region-suggestions {
+  margin-top: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: none;
+}
+
+.download-region-suggestions.visible {
+  display: block;
+}
+
+.download-region-item {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.download-region-item:hover {
+  background: #f5f5f5;
+}
+
+.download-format-btn {
+  display: block;
+  padding: 10px 14px;
+  border: 1px solid #1a1a1a;
+  border-radius: 14px;
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  text-align: center;
+}
+
+.download-format-btn:hover {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+/* ----- Download modal: format pills stack on mobile ----- */
+@media (max-width: 540px) {
+  .download-format-buttons {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .download-format-row1,
+  .download-format-row2 {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
