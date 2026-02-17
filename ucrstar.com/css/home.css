@@ -1,0 +1,13 @@
+/*
+  UCR Star – Home page
+  Entry point: imports all home partials for easier maintenance.
+*/
+@import url("home/base.css");
+@import url("home/sidebar.css");
+@import url("home/map-wrapper.css");
+@import url("home/floating-nav.css");
+@import url("home/map-controls.css");
+@import url("home/drawer.css");
+@import url("home/preview-card.css");
+@import url("home/maplibre-overrides.css");
+@import url("home/share-modal.css");

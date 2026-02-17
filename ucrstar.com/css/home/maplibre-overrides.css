@@ -1,0 +1,24 @@
+/* ----- MapLibre GL JS overrides ----- */
+.maplibregl-ctrl-bottom-right {
+  bottom: 8px;
+  right: 16px;
+}
+
+.maplibregl-ctrl-attrib {
+  font-size: 10px;
+}
+
+.maplibregl-ctrl-logo {
+  margin-right: 0;
+}
+
+/* Search result marker (red pin after geocode) */
+.search-result-marker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(204, 51, 51, 0.85);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+}

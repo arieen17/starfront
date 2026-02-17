@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="A1" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n"/>
+        </layout>
+    </appender>
+    <!-- A logger for visualization requests -->
+    <appender name="DaVinci" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="Append" value="true"/>
+        <param name="datePattern" value="'-'yyy-MM-dd"/>
+        <param name="File" value="log/davinci.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%r	%d{YYYY-MM-dd HH:mm:ss}	[%p]	%c{1}	&quot;%m&quot;%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="info" />
+            <param name="levelMax" value="info" />
+        </filter>
+    </appender>
+    <!-- A logger for warning and errors -->
+    <appender name="ErrorFile" class="org.apache.log4j.RollingFileAppender">
+        <param name="Append" value="true"/>
+        <param name="File" value="log/errors.log"/>
+        <param name="Threshold" value="WARN"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%r	%d{YYYY-MM-dd HH:mm:ss}	[%p]	%c{1}	&quot;%m&quot;%n"/>
+        </layout>
+    </appender>
+    <!-- A logger for normal log messages for Beast classes only -->
+    <appender name="LogFile" class="org.apache.log4j.RollingFileAppender">
+        <param name="Append" value="true"/>
+        <param name="File" value="log/normal.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%r	%d{YYYY-MM-dd HH:mm:ss}	[%p]	%c{1}	&quot;%m&quot;%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="info" />
+            <param name="levelMax" value="info" />
+        </filter>
+    </appender>
+    <!-- A logger for UCR Star that logs messages related to the Datasets and MongoDB part of the code -->
+    <appender name="UCRSTAR" class="org.apache.log4j.RollingFileAppender">
+        <param name="Append" value="true"/>
+        <param name="File" value="log/ucrstar.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%r	%d{YYYY-MM-dd HH:mm:ss}	[%p]	%c{1}	&quot;%m&quot;%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="info" />
+            <param name="levelMax" value="info" />
+        </filter>
+    </appender>
+    <logger name="edu.ucr.cs.bdlab">
+        <level value="INFO"/>
+        <appender-ref ref="LogFile"/>
+        <appender-ref ref="ErrorFile"/>
+    </logger>
+    <logger name="edu.ucr.cs.bdlab.sparkOperations.DaVinciServer">
+        <level value="INFO"/>
+        <appender-ref ref="DaVinci"/>
+    </logger>
+    <logger name="edu.ucr.cs.bdlab.ucrstar">
+        <level value="INFO"/>
+        <appender-ref ref="UCRSTAR"/>
+    </logger>
+    <root>
+        <level value="ERROR"/>
+        <appender-ref ref="A1"/>
+    </root>
+</log4j:configuration>

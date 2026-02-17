@@ -1,0 +1,27 @@
+/*
+  UCR Star – Home page (map-first, no backend)
+  Base: reset, body, app layout.
+*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background: #f0f0f0;
+  color: #1a1a1a;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}

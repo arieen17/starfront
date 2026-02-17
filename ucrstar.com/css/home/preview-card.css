@@ -1,0 +1,126 @@
+/* ----- Dataset preview card (inside map frame) ----- */
+.preview-card {
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  width: 340px;
+  max-width: calc(100% - 32px);
+  padding: 20px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  border: 1px solid #eee;
+}
+
+.preview-card.hidden {
+  display: none;
+}
+
+.preview-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0;
+}
+
+.preview-close:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.preview-type {
+  margin: 0 36px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.preview-divider {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 10px 0 12px;
+}
+
+.preview-stats {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.preview-stats li {
+  padding: 0;
+}
+
+.preview-desc-label {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.preview-desc {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.preview-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+}
+
+.preview-action-btn {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: #1976d2;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+}
+
+.preview-action-btn:hover {
+  background: #1565c0;
+  transform: scale(1.05);
+}
+
+.preview-action-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.preview-share svg {
+  width: 20px;
+  height: 20px;
+}

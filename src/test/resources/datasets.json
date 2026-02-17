@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "5e0d61c0eb21d48fdabcabd4"
+  },
+  "name": "randpoints",
+  "description": "1000 randomly generated points.",
+  "download_url": "http://example.com/randpoints",
+  "project_homepage": "http://example.com/",
+  "extent": [
+    0.0,
+    0.0,
+    1.0,
+    1.0
+  ],
+  "size": 8000,
+  "num_features": 1000,
+  "num_points": 1000,
+  "avg_sidelength": [
+    0.0,
+    0.0
+  ],
+  "geometry_type": "POINT",
+  "author": "Spider",
+  "title": "1000 uniformly generated points.",
+  "date_created": 2021,
+  "status": "published",
+  "modifiedAt": {
+    "$date": "2021-01-22T05:11:50.704Z"
+  },
+  "index_path": "randpoints/data_index",
+  "beastOptions": {
+    "iformat": "point",
+    "separator": ";"
+  }
+}
+]

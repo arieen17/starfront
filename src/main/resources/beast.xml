@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beast>
+  <Readers>
+    <Reader>edu.ucr.cs.bdlab.ucrstar.GeoLifeReader</Reader>
+    <Reader>edu.ucr.cs.bdlab.ucrstar.LineSegmentReader</Reader>
+    <Reader>edu.ucr.cs.bdlab.ucrstar.PortoReader</Reader>
+  </Readers>
+
+  <Operations>
+    <Operation>edu.ucr.cs.bdlab.ucrstar.DatasetCLI</Operation>
+    <Operation>edu.ucr.cs.bdlab.ucrstar.BreakAndIndex</Operation>
+  </Operations>
+
+  <WebHandlers>
+    <WebHandler>edu.ucr.cs.bdlab.ucrstar.DatasetServer</WebHandler>
+  </WebHandlers>
+
+</beast>

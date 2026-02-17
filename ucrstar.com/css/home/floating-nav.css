@@ -1,0 +1,250 @@
+/* ----- Floating nav: no container background; only search + tags have their own pill style ----- */
+.floating-nav {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-wrap {
+  flex: 1;
+  min-width: 200px;
+  max-width: 420px;
+  position: relative;
+}
+
+.search-wrap input {
+  width: 100%;
+  height: 44px;
+  padding: 0 44px 0 18px;
+  border: none;
+  border-radius: 22px;
+  font-size: 15px;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s;
+}
+
+.search-wrap input:focus {
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.14);
+}
+
+.search-wrap .search-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+}
+
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  max-height: 280px;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  border: 1px solid #eee;
+}
+
+.search-suggestions.hidden {
+  display: none;
+}
+
+.search-suggestions .suggestion-item {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.search-suggestions .suggestion-item:hover,
+.search-suggestions .suggestion-item:focus {
+  background: #f5f5f5;
+  outline: none;
+}
+
+.search-suggestions .suggestion-item.suggestion-tag {
+  font-weight: 600;
+  color: #1565c0;
+}
+
+.search-suggestions .suggestion-item.suggestion-dataset {
+  font-size: 13px;
+  color: #555;
+  padding-left: 20px;
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 0;
+  flex-shrink: 0;
+  scrollbar-width: thin;
+}
+
+.categories::-webkit-scrollbar {
+  height: 5px;
+}
+
+.categories::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.category-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 22px;
+  background: #fff;
+  color: #444;
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    color 0.2s;
+}
+
+.category-btn:hover {
+  background: #f8f8f8;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.category-btn.active {
+  background: #e3f2fd;
+  color: #1565c0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-btn .category-btn-clear {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 1;
+  color: inherit;
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.category-btn .category-btn-clear:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.category-btn.active .category-btn-clear {
+  display: inline-flex;
+}
+
+#more-category-btn[data-category=""] .category-btn-clear {
+  display: none;
+}
+
+.category-btn svg {
+  width: 16px;
+  height: 16px;
+  opacity: 0.9;
+}
+
+/* ----- More → categories dropdown (fixed so it never moves the nav) ----- */
+.categories-more-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.categories-dropdown {
+  position: fixed;
+  /* left/top set by JS from More button getBoundingClientRect() */
+  min-width: 180px;
+  max-width: 260px;
+  max-height: 320px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* hide scrollbars – still scroll with wheel/touch */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  border: 1px solid #e5e7eb;
+  padding: 4px 0;
+}
+
+.categories-dropdown::-webkit-scrollbar {
+  display: none;
+}
+
+.categories-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 16px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff;
+  filter: drop-shadow(0 -1px 0 #e5e7eb);
+}
+
+.categories-dropdown.hidden {
+  display: none;
+}
+
+.category-dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  transition:
+    background 0.1s,
+    color 0.1s;
+}
+
+.category-dropdown-item:hover,
+.category-dropdown-item:focus {
+  background: #f3f4f6;
+  outline: none;
+}
+
+.categories-dropdown-separator {
+  height: 1px;
+  margin: 4px 0;
+  background: #e5e7eb;
+}

@@ -1,0 +1,2227 @@
+{
+  "datasets": [
+    {
+      "_id": "5e0d61c0eb21d48fdabcabd4",
+      "name": "OSM2015/all_objects",
+      "description": "The boundaries of all map objects in OpenStreetMap.",
+      "size": 91641768622,
+      "num_features": 263806686,
+      "num_points": 3285147289,
+      "geometry_type": "GEOMETRYCOLLECTION"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabd5",
+      "name": "OSM2015/buildings",
+      "description": "The boundaries of all buildings in the world as extracted from OpenStreetMap.",
+      "size": 29751344557,
+      "num_features": 114796734,
+      "num_points": 804080191,
+      "geometry_type": "GEOMETRYCOLLECTION"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabd3",
+      "name": "OSM2015/all_nodes",
+      "description": "All points on the map as extracted from OpenStreetMap.",
+      "size": 257208199119,
+      "num_features": 2682401763,
+      "geometry_type": "POINT"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabd7",
+      "name": "OSM2015/lakes",
+      "description": "All water areas in the world from OpenStreetMap. This includes coastal lines, lakes, rivers, pools, and others.",
+      "size": 7376457976,
+      "num_features": 8419324,
+      "num_points": 385419563,
+      "geometry_type": "GEOMETRYCOLLECTION"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabd6",
+      "name": "OSM2015/cemetery",
+      "description": "Cemetery areas from all over world as extracted from OpenStreetMap",
+      "size": 56600396,
+      "num_features": 193076,
+      "num_points": 1994329,
+      "geometry_type": "GEOMETRYCOLLECTION"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabd9",
+      "name": "OSM2015/postal_codes",
+      "description": "Boundaries of postal code areas as defined in OpenStreetMap. Mostly cities.",
+      "size": 1102437801,
+      "num_features": 171226,
+      "num_points": 65544938,
+      "geometry_type": "GEOMETRYCOLLECTION"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabd8",
+      "name": "OSM2015/parks",
+      "description": "Boundaries of parks and green areas from all over the world as extracted from OpenStreetMap.",
+      "size": 7733439136,
+      "num_features": 9961896,
+      "num_points": 408161460,
+      "geometry_type": "GEOMETRYCOLLECTION"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabda",
+      "name": "OSM2015/roads",
+      "description": "Roads and streets around the world each represented as a polyline extracted from OpenStreetMap",
+      "size": 24332401381,
+      "num_features": 72339945,
+      "num_points": 789388126,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabdc",
+      "name": "OSM2015/sports",
+      "description": "Boundaries of sporting areas",
+      "size": 573194358,
+      "num_features": 1767137,
+      "num_points": 20753090,
+      "geometry_type": "GEOMETRYCOLLECTION"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabdb",
+      "name": "OSM2015/road-network",
+      "description": "Roads and streets around the world each represented as individual line segments",
+      "size": 183648572593,
+      "num_features": 717048810,
+      "num_points": 1434097620,
+      "geometry_type": "LINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabde",
+      "name": "Tweets",
+      "description": "A set of 20 million geotagged tweets. Each tweet is associated with a set of comma-separated keywords",
+      "size": 2674323474,
+      "num_features": 20000000,
+      "geometry_type": "POINT",
+      "tags": "twitter social media"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabdf",
+      "name": "Chicago Crimes",
+      "description": "This dataset reflects reported incidents of crime (with the exception of murders where data exists for each victim) that occurred in the City of Chicago from 2001 to present, minus the most recent seven days.",
+      "size": 4128272807,
+      "num_features": 14326547,
+      "geometry_type": "POINT",
+      "num_points": 14188242
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabe0",
+      "name": "NYCTaxi",
+      "description": "This dataset represents pickup and dropoff locations of NYC Taxi in 2013",
+      "size": 38803454769,
+      "num_features": 173179759,
+      "geometry_type": "POINT"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabe1",
+      "name": "TDrive",
+      "description": "This is a sample of T-Drive trajectory dataset that contains a one-week trajectories of 10,357 taxis. The total number of points in this dataset is about 15 million and the total distance of the trajectories reaches 9 million kilometers.",
+      "size": 1835653311,
+      "num_features": 17662984,
+      "geometry_type": "POINT"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabe2",
+      "name": "GeoLife",
+      "description": "This GPS trajectory dataset was collected in (Microsoft Research Asia) Geolife project by 178 users in a period of over four years (from April 2007 to October 2011). A GPS trajectory of this dataset is represented by a sequence of time-stamped points, each of which contains the information of latitude, longitude and altitude. This dataset contains 17,621 trajectories with a total distance of 1,251,654 kilometers and a total duration of 48,203 hours. These trajectories were recorded by different GPS loggers and GPS-phones, and have a variety of sampling rates. 91 percent of the trajectories are logged in a dense representation, e.g. every 1~5 seconds or every 5~10 meters per point. This dataset recoded a broad range of users??? outdoor movements, including not only life routines like go home and go to work but also some entertainments and sports activities, such as shopping, sightseeing, dining, hiking, and cycling. This trajectory dataset can be used in many research fields, such as mobility pattern mining, user activity recognition, location-based social networks, location privacy, and location recommendation.",
+      "size": 3051417402,
+      "num_features": 24876978,
+      "geometry_type": "POINT"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabdd",
+      "name": "eBird",
+      "description": "eBird dataset with all primary database fields. This includes checklist and observation data. Records that have not yet been reviewed can also be requested. This is the most complete and current dataset and recommended for most uses, including seasonal reports for journals. \u003Ca target='_blank' href='https://www.birds.cornell.edu/home/terms-of-use/'\u003ETerms of Use\u003C/a\u003E",
+      "size": 306571826591,
+      "num_features": 800969427,
+      "geometry_type": "POINT"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabe3",
+      "name": "NE/countries",
+      "description": "Admin 0 - Countries. There are 247 countries in the world. Greenland as separate from Denmark. Most users will want this file instead of sovereign states.",
+      "geometry_type": "MULTIPOLYGON",
+      "size": 9399474,
+      "num_features": 255,
+      "num_points": 548121
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabe5",
+      "name": "NE/boundary_lines",
+      "description": "Boundary Lines. Country boundaries on land and offshore",
+      "geometry_type": "MULTILINESTRING",
+      "size": 1691528,
+      "num_features": 462,
+      "num_points": 77605
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabe4",
+      "name": "NE/countries_lakes",
+      "description": "Countries without boundary lakes. There are 247 countries in the world. Greenland as separate from Denmark. Most users will want this file instead of sovereign states.",
+      "geometry_type": "MULTIPOLYGON",
+      "size": 9614750,
+      "num_features": 255,
+      "num_points": 561549
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabe7",
+      "name": "NE/urban_areas",
+      "description": "Area of dense human habitation",
+      "geometry_type": "POLYGON",
+      "size": 20200546,
+      "num_features": 11878,
+      "num_points": 1153348
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabe6",
+      "name": "NE/states_provinces",
+      "description": "States and provinces. Internal adminitrative boundaries",
+      "geometry_type": "MULTIPOLYGON",
+      "size": 32642998,
+      "num_features": 4594,
+      "num_points": 1295240
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabe9",
+      "name": "NE/time_zones",
+      "description": "Timezones: Includes 24+ timezones with local offsets and map color codes",
+      "geometry_type": "MULTIPOLYGON",
+      "size": 2674360,
+      "num_features": 120,
+      "num_points": 155007
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabeb",
+      "name": "NE/roads_NA",
+      "description": "Roads supplement for North America",
+      "geometry_type": "MULTILINESTRING",
+      "size": 81052572,
+      "num_features": 49183,
+      "num_points": 4032784
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabed",
+      "name": "NE/railroads_NA",
+      "description": "Railroads supplement for North America.",
+      "geometry_type": "LINESTRING",
+      "size": 1250792,
+      "num_features": 1127,
+      "num_points": 66341
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabea",
+      "name": "NE/roads",
+      "description": "Roads.",
+      "geometry_type": "MULTILINESTRING",
+      "size": 56854448,
+      "num_features": 56601,
+      "num_points": 709184
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabf0",
+      "name": "NE/disputed_areas",
+      "description": "Breakaway and disputed areas",
+      "geometry_type": "POLYGON",
+      "size": 231248,
+      "num_features": 213,
+      "num_points": 12110
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabf2",
+      "name": "NE/coastline",
+      "description": "Coastline. Includes major islands.",
+      "geometry_type": "LINESTRING",
+      "size": 7228278,
+      "num_features": 4133,
+      "num_points": 410954
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabec",
+      "name": "NE/railroads",
+      "description": "Railroads",
+      "geometry_type": "LINESTRING",
+      "size": 28620691,
+      "num_features": 25413,
+      "num_points": 1396480
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabf1",
+      "name": "NE/land",
+      "description": "Land polygons including major islands",
+      "geometry_type": "MULTIPOLYGON",
+      "size": 6589758,
+      "num_features": 10,
+      "num_points": 410792
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabef",
+      "name": "NE/ports",
+      "description": "Ports",
+      "geometry_type": "POINT",
+      "size": 517799,
+      "num_features": 1081,
+      "num_points": 1081
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabee",
+      "name": "NE/airports",
+      "description": "Airports",
+      "geometry_type": "MULTIPOLYGON",
+      "size": 9399474,
+      "num_features": 255,
+      "num_points": 548121
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabe8",
+      "name": "NE/populated_places",
+      "description": "Populated Places. City and town points, from Tokyo to Wasilla, Cairo to Kandahar",
+      "geometry_type": "POINT",
+      "size": 72189033,
+      "num_features": 7343,
+      "num_points": 7343
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabf3",
+      "name": "NE/lakes",
+      "description": "Lakes + Reservoirs. Natural and artificial lakes",
+      "geometry_type": "MULTIPOLYGON",
+      "size": 11734050,
+      "num_features": 1354,
+      "num_points": 139342
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabf4",
+      "name": "NE/rivers_lake_centerlines",
+      "description": "Rivers lakes centerlines.",
+      "geometry_type": "MULTILINESTRING",
+      "size": 13996040,
+      "num_features": 1455,
+      "num_points": 256386
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabf5",
+      "name": "NE/rivers_NA",
+      "description": "Rivers supplement for North America",
+      "geometry_type": "MULTILINESTRING",
+      "size": 36090588,
+      "num_features": 5260,
+      "num_points": 87555
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabf7",
+      "name": "NE/bathymetry_all",
+      "description": "Bathymetry. Nested polygons for each depth created from SRTM Plus",
+      "geometry_type": "MULTIPOLYGON",
+      "size": 35936570,
+      "num_features": 5779,
+      "num_points": 2202011
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabf6",
+      "name": "NE/rivers_europe",
+      "description": "Rivers supplement for Europe",
+      "geometry_type": "MULTIPOLYGON",
+      "size": 5032642,
+      "num_features": 767,
+      "num_points": 17994
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabf8",
+      "name": "TIGER2018/ADDRFEAT",
+      "description": "Address Range Feature",
+      "size": 12333306984,
+      "num_features": 26859559,
+      "num_points": 193351168,
+      "geometry_type": "LINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabf9",
+      "name": "TIGER2018/AIANNH",
+      "description": "American Indian / Alaska Native / Native Hawaiian Areas",
+      "size": 13879556,
+      "num_features": 845,
+      "num_points": 848019,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabfa",
+      "name": "TIGER2018/AITSN",
+      "description": "American Indian Tribal Subdivision National",
+      "size": 9461474,
+      "num_features": 474,
+      "num_points": 580661,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabfb",
+      "name": "TIGER2018/ANRC",
+      "description": "Alaska Native Regional Corporation",
+      "size": 1071740,
+      "num_features": 12,
+      "num_points": 66708,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabfc",
+      "name": "TIGER2018/AREALM",
+      "description": "Area Landmark",
+      "size": 139179261,
+      "num_features": 131501,
+      "num_points": 6584970,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabfd",
+      "name": "TIGER2018/AREAWATER",
+      "description": "Area Hydrography",
+      "size": 2191991268,
+      "num_features": 2265220,
+      "num_points": 101014096,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabfe",
+      "name": "TIGER2018/BG",
+      "description": "Block Group",
+      "size": 1120632900,
+      "num_features": 220740,
+      "num_points": 67804171,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcabff",
+      "name": "TIGER2018/CBSA",
+      "description": "Metropolitan Statistical Area / Micropolitan Statistical Area",
+      "size": 52340088,
+      "num_features": 945,
+      "num_points": 3251165,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac00",
+      "name": "TIGER2018/CD",
+      "description": "Congressional District",
+      "size": 64219508,
+      "num_features": 444,
+      "num_points": 4008721,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac01",
+      "name": "TIGER2018/CNECTA",
+      "description": "Combined New England City and Town Area",
+      "size": 779984,
+      "num_features": 7,
+      "num_points": 48603,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac02",
+      "name": "TIGER2018/COASTLINE",
+      "description": "Coastline",
+      "size": 25668594,
+      "num_features": 4258,
+      "num_points": 1559312,
+      "geometry_type": "LINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac03",
+      "name": "TIGER2018/CONCITY",
+      "description": "Consolidated City",
+      "size": 339900,
+      "num_features": 8,
+      "num_points": 21067,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac04",
+      "name": "TIGER2018/COUNTY",
+      "description": "County",
+      "size": 128311804,
+      "num_features": 3233,
+      "num_points": 7946705,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac05",
+      "name": "TIGER2018/COUSUB",
+      "description": "County Subdivision",
+      "size": 491497098,
+      "num_features": 36701,
+      "num_points": 29867699,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac06",
+      "name": "TIGER2018/CSA",
+      "description": "Combined Statistical Area",
+      "size": 18323020,
+      "num_features": 174,
+      "num_points": 1141575,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac07",
+      "name": "TIGER2018/EDGES",
+      "description": "All Lines",
+      "size": 33621854612,
+      "num_features": 67564510,
+      "num_points": 758521277,
+      "geometry_type": "LINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac08",
+      "name": "TIGER2018/ELSD",
+      "description": "Elementary School District",
+      "size": 22465180,
+      "num_features": 1958,
+      "num_points": 1373886,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac09",
+      "name": "TIGER2018/ESTATE",
+      "description": "Estate",
+      "size": 927768,
+      "num_features": 336,
+      "num_points": 50488,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac0b",
+      "name": "TIGER2018/LINEARWATER",
+      "description": "Linear Hydrography",
+      "size": 5811780616,
+      "num_features": 5707355,
+      "num_points": 291894351,
+      "geometry_type": "LINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac0c",
+      "name": "TIGER2018/METDIV",
+      "description": "Metropolitan Division",
+      "size": 3036467,
+      "num_features": 31,
+      "num_points": 189102,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac0a",
+      "name": "TIGER2018/FACES",
+      "description": "Topological Faces (Polygons with All Geocodes)",
+      "size": 21936252710,
+      "num_features": 19942578,
+      "num_points": 1040072088,
+      "geometry_type": "POLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac0d",
+      "name": "TIGER2018/MIL",
+      "description": "Military Installation",
+      "size": 4694790,
+      "num_features": 859,
+      "num_points": 279725,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac0e",
+      "name": "TIGER2018/NECTADIV",
+      "description": "New England City and Town Area Division",
+      "size": 408006,
+      "num_features": 10,
+      "num_points": 25280,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac0f",
+      "name": "TIGER2018/NECTA",
+      "description": "New England City and Town Area",
+      "size": 1627124,
+      "num_features": 39,
+      "num_points": 100864,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac10",
+      "name": "TIGER2018/PLACE",
+      "description": "Place",
+      "size": 209760149,
+      "num_features": 29853,
+      "num_points": 12446606,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac13",
+      "name": "TIGER2018/PRISECROADS",
+      "description": "Primary and Secondary Roads",
+      "size": 502564240,
+      "num_features": 270602,
+      "num_points": 28163041,
+      "geometry_type": "LINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac12",
+      "name": "TIGER2018/PRIMARYROADS",
+      "description": "Primary Roads",
+      "size": 60009184,
+      "num_features": 18565,
+      "num_points": 3527794,
+      "geometry_type": "LINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac11",
+      "name": "TIGER2018/POINTLM",
+      "description": "Point Landmark",
+      "size": 216608315,
+      "num_features": 998195,
+      "geometry_type": "POINT"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac15",
+      "name": "TIGER2018/RAILS",
+      "description": "Rails",
+      "size": 76519316,
+      "num_features": 145116,
+      "num_points": 3050135,
+      "geometry_type": "LINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac14",
+      "name": "TIGER2018/PUMA",
+      "description": "Public Use Microdata Area",
+      "size": 109645920,
+      "num_features": 2380,
+      "num_points": 6817265,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac16",
+      "name": "TIGER2018/ROADS",
+      "description": "All Roads",
+      "size": 9116875464,
+      "num_features": 18368450,
+      "num_points": 349383315,
+      "geometry_type": "MULTILINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac19",
+      "name": "TIGER2018/SLDU",
+      "description": "State Legislative District ??? Upper Chamber",
+      "size": 147762685,
+      "num_features": 1961,
+      "num_points": 9205402,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac18",
+      "name": "TIGER2018/SLDL",
+      "description": "State Legislative District ??? Lower Chamber",
+      "size": 214382389,
+      "num_features": 4833,
+      "num_points": 13325812,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac17",
+      "name": "TIGER2018/SCSD",
+      "description": "Secondary School Districts",
+      "size": 11369220,
+      "num_features": 486,
+      "num_points": 703080,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac1a",
+      "name": "TIGER2018/STATE",
+      "description": "State and Equivalent",
+      "size": 14805044,
+      "num_features": 56,
+      "num_points": 924434,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac1b",
+      "name": "TIGER2018/SUBMCD",
+      "description": "SubMinor Civil Division (Subbarios in Puerto Rico)",
+      "size": 235607,
+      "num_features": 145,
+      "num_points": 11398,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac1c",
+      "name": "TIGER2018/TABBLOCK",
+      "description": "Tabulation (Census) Block",
+      "size": 12343027284,
+      "num_features": 11166336,
+      "num_points": 651293233,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac1d",
+      "name": "TIGER2018/TBG",
+      "description": "Tribal Block Group",
+      "size": 16748186,
+      "num_features": 917,
+      "num_points": 1036365,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac1e",
+      "name": "TIGER2018/TRACT",
+      "description": "Census Tract",
+      "size": 629958758,
+      "num_features": 74133,
+      "num_points": 38565927,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac1f",
+      "name": "TIGER2018/TTRACT",
+      "description": "Tribal Census Tract",
+      "size": 11729034,
+      "num_features": 483,
+      "num_points": 726814,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac20",
+      "name": "TIGER2018/UAC",
+      "description": "Urban Area/Urban Cluster",
+      "size": 136338606,
+      "num_features": 3601,
+      "num_points": 8442518,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac21",
+      "name": "TIGER2018/UNSD",
+      "description": "Unified School District",
+      "size": 235057370,
+      "num_features": 10891,
+      "num_points": 14521038,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac22",
+      "name": "TIGER2018/ZCTA5",
+      "description": "5-Digit ZIP Code Tabulation Area",
+      "size": 851894660,
+      "num_features": 33144,
+      "num_points": 52957302,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac23",
+      "name": "TIGER2017/ADDRFEAT",
+      "description": "Address Range Feature",
+      "size": 12428232056,
+      "num_features": 27159959,
+      "geometry_type": "LINESTRING",
+      "num_points": 192825385
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac24",
+      "name": "TIGER2017/AIANNH",
+      "description": "American Indian / Alaska Native / Native Hawaiian Areas",
+      "size": 13893708,
+      "num_features": 843,
+      "num_points": 848954,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac25",
+      "name": "TIGER2017/AITSN",
+      "description": "American Indian Tribal Subdivision National",
+      "size": 9469250,
+      "num_features": 474,
+      "num_points": 581147,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac26",
+      "name": "TIGER2017/ANRC",
+      "description": "Alaska Native Regional Corporation",
+      "size": 1070124,
+      "num_features": 12,
+      "num_points": 66607,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac27",
+      "name": "TIGER2017/AREALM",
+      "description": "Area Landmark",
+      "size": 137427099,
+      "num_features": 129759,
+      "num_points": 6503438,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac28",
+      "name": "TIGER2017/AREAWATER",
+      "description": "Area Hydrography",
+      "size": 2208774560,
+      "num_features": 2293510,
+      "num_points": 101613855,
+      "geometry_type": "POLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac29",
+      "name": "TIGER2017/BG",
+      "description": "Block Group",
+      "size": 1118665848,
+      "num_features": 220740,
+      "num_points": 67681232,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac2a",
+      "name": "TIGER2017/CBSA",
+      "description": "Metropolitan Statistical Area / Micropolitan Statistical Area",
+      "size": 52227496,
+      "num_features": 945,
+      "num_points": 3244128,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac2b",
+      "name": "TIGER2017/CD",
+      "description": "Congressional District",
+      "size": 65138468,
+      "num_features": 444,
+      "num_points": 4066157,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac2c",
+      "name": "TIGER2017/CNECTA",
+      "description": "Combined New England City and Town Area",
+      "size": 766892,
+      "num_features": 7,
+      "num_points": 47785,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac2d",
+      "name": "TIGER2017/COASTLINE",
+      "description": "Coastline",
+      "size": 25478457,
+      "num_features": 4209,
+      "num_points": 1547946,
+      "geometry_type": "LINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac2e",
+      "name": "TIGER2017/CONCITY",
+      "description": "Consolidated City",
+      "size": 328940,
+      "num_features": 8,
+      "num_points": 20382,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac2f",
+      "name": "TIGER2017/COUNTY",
+      "description": "County",
+      "size": 127819196,
+      "num_features": 3233,
+      "num_points": 7915917,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac30",
+      "name": "TIGER2017/COUSUB",
+      "description": "County Subdivision",
+      "size": 489904328,
+      "num_features": 36702,
+      "num_points": 29768075,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac31",
+      "name": "TIGER2017/CSA",
+      "description": "Combined Statistical Area",
+      "size": 18222076,
+      "num_features": 174,
+      "num_points": 1135266,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac32",
+      "name": "TIGER2017/EDGES",
+      "description": "All Lines",
+      "size": 34285186550,
+      "num_features": 69273765,
+      "num_points": 766008080,
+      "geometry_type": "LINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac33",
+      "name": "TIGER2017/ELSD",
+      "description": "Elementary School District",
+      "size": 22520788,
+      "num_features": 1968,
+      "num_points": 1377210,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac34",
+      "name": "TIGER2017/ESTATE",
+      "description": "Estate",
+      "size": 924440,
+      "num_features": 336,
+      "num_points": 50280,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac36",
+      "name": "TIGER2017/LINEARWATER",
+      "description": "Linear Hydrography",
+      "size": 5832102100,
+      "num_features": 5742390,
+      "geometry_type": "MULTILINESTRING",
+      "num_points": 292726481
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac37",
+      "name": "TIGER2017/METDIV",
+      "description": "Metropolitan Division",
+      "size": 3055507,
+      "num_features": 31,
+      "num_points": 190292,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac35",
+      "name": "TIGER2017/FACES",
+      "description": "Topological Faces (Polygons with All Geocodes)",
+      "size": 22298618002,
+      "num_features": 20653238,
+      "num_points": 1050938372,
+      "geometry_type": "POLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac38",
+      "name": "TIGER2017/MIL",
+      "description": "Military Installation",
+      "size": 4868658,
+      "num_features": 831,
+      "num_points": 291033,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac39",
+      "name": "TIGER2017/NECTA",
+      "description": "New England City and Town Area",
+      "size": 1612928,
+      "num_features": 39,
+      "num_points": 99977,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac3a",
+      "name": "TIGER2017/NECTADIV",
+      "description": "New England City and Town Area Division",
+      "size": 399522,
+      "num_features": 10,
+      "num_points": 24750,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac3c",
+      "name": "TIGER2017/POINTLM",
+      "description": "Point Landmark",
+      "size": 195878088,
+      "num_features": 902664,
+      "num_points": 902662,
+      "geometry_type": "POINT"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac3b",
+      "name": "TIGER2017/PLACE",
+      "description": "Place",
+      "size": 205277368,
+      "num_features": 29856,
+      "num_points": 12166383,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac3d",
+      "name": "TIGER2017/PRIMARYROADS",
+      "description": "Primary Roads",
+      "size": 43855104,
+      "num_features": 11574,
+      "num_points": 2602056,
+      "geometry_type": "LINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac3e",
+      "name": "TIGER2017/PRISECROADS",
+      "description": "Primary and Secondary Roads",
+      "size": 500974484,
+      "num_features": 266298,
+      "num_points": 28115318,
+      "geometry_type": "MULTILINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac40",
+      "name": "TIGER2017/RAILS",
+      "description": "Rails",
+      "size": 89627059,
+      "num_features": 176237,
+      "num_points": 3497860,
+      "geometry_type": "MULTILINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac3f",
+      "name": "TIGER2017/PUMA",
+      "description": "Public Use Microdata Area",
+      "size": 109282672,
+      "num_features": 2380,
+      "num_points": 6794563,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac41",
+      "name": "TIGER2017/ROADS",
+      "description": "All Roads",
+      "size": 9276137032,
+      "num_features": 18853288,
+      "num_points": 353518869,
+      "geometry_type": "MULTILINESTRING"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac42",
+      "name": "TIGER2017/SCSD",
+      "description": "Secondary School Districts",
+      "size": 11316816,
+      "num_features": 488,
+      "num_points": 699778,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac43",
+      "name": "TIGER2017/SLDL",
+      "description": "State Legislative District - Lower Chamber",
+      "size": 216168745,
+      "num_features": 4833,
+      "num_points": 13437453,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac44",
+      "name": "TIGER2017/SLDU",
+      "description": "State Legislative District - Upper Chamber",
+      "size": 149125361,
+      "num_features": 1961,
+      "num_points": 9290566,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac45",
+      "name": "TIGER2017/STATE",
+      "description": "State and Equivalent",
+      "size": 14790836,
+      "num_features": 56,
+      "num_points": 923546,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac46",
+      "name": "TIGER2017/SUBMCD",
+      "description": "SubMinor Civil Division (Subbarios in Puerto Rico)",
+      "size": 235543,
+      "num_features": 145,
+      "num_points": 11394,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac47",
+      "name": "TIGER2017/TABBLOCK",
+      "description": "Tabulation (Census) Block",
+      "size": 12339615928,
+      "num_features": 11166336,
+      "num_points": 651080139,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac48",
+      "name": "TIGER2017/TBG",
+      "description": "Tribal Block Group",
+      "size": 16771198,
+      "num_features": 917,
+      "num_points": 1037807,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac49",
+      "name": "TIGER2017/TRACT",
+      "description": "Census Tract",
+      "size": 628377394,
+      "num_features": 74133,
+      "num_points": 38467094,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac4a",
+      "name": "TIGER2017/TTRACT",
+      "description": "Tribal Census Tract",
+      "size": 11759586,
+      "num_features": 483,
+      "num_points": 728727,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac4b",
+      "name": "TIGER2017/UAC",
+      "description": "Urban Area/Urban Cluster",
+      "size": 135780218,
+      "num_features": 3601,
+      "num_points": 8407621,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac4c",
+      "name": "TIGER2017/UNSD",
+      "description": "Unified School District",
+      "size": 233587976,
+      "num_features": 10896,
+      "num_points": 14429131,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e0d61c0eb21d48fdabcac4d",
+      "name": "TIGER2017/ZCTA5",
+      "description": "5-Digit ZIP Code Tabulation Area",
+      "size": 850884692,
+      "num_features": 33144,
+      "num_points": 52894188,
+      "geometry_type": "MULTIPOLYGON"
+    },
+    {
+      "_id": "5e23611fe056dde369fc8961",
+      "name": "MSBuildings",
+      "description": "This dataset contains 125,192,184 computer generated building footprints in all 50 US states. Provided by Microsoft.",
+      "size": 20556344368,
+      "num_features": 125192184,
+      "num_points": 752704741,
+      "geometry_type": "POLYGON"
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0dc",
+      "name": "Ahmadi17/AMS/road",
+      "description": "Vertices in Amsterdam road network",
+      "geometry_type": "POINT",
+      "num_features": 106600,
+      "size": 9056490
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0dd",
+      "name": "Ahmadi17/AMS/restaurants",
+      "description": "Restaurants in Amsterdam",
+      "geometry_type": "POINT",
+      "num_features": 343,
+      "size": 31972
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0de",
+      "name": "Ahmadi17/AMS/coffeshops",
+      "description": "Coffee shops in Amsterdam",
+      "geometry_type": "POINT",
+      "num_features": 446,
+      "size": 41561
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0e0",
+      "name": "Ahmadi17/AMS/theatres",
+      "description": "Movie Theatres in Amsterdam",
+      "geometry_type": "POINT",
+      "num_features": 59,
+      "size": 5442
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0df",
+      "name": "Ahmadi17/AMS/atmbanks",
+      "description": "ATM Banks in Amsterdam",
+      "geometry_type": "POINT",
+      "num_features": 446,
+      "size": 41561
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0e5",
+      "name": "Ahmadi17/AMS/subwaystops",
+      "description": "Subway stops in Amsterdam",
+      "geometry_type": "POINT",
+      "num_features": 42,
+      "size": 3915
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0e1",
+      "name": "Ahmadi17/AMS/pharmacies",
+      "description": "Pharmacies in Amsterdam",
+      "geometry_type": "POINT",
+      "num_features": 51,
+      "size": 4714
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0e3",
+      "name": "Ahmadi17/AMS/gas",
+      "description": "Gas stations in Amsterdam",
+      "geometry_type": "POINT",
+      "num_features": 49,
+      "size": 4530
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0e4",
+      "name": "Ahmadi17/AMS/busstops",
+      "description": "Bus stops in Amsterdam",
+      "geometry_type": "POINT",
+      "num_features": 887,
+      "size": 83153
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0e2",
+      "name": "Ahmadi17/AMS/bars",
+      "description": "Pubs and Bars in Amsterdam",
+      "geometry_type": "POINT",
+      "num_features": 342,
+      "size": 31809
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0e6",
+      "name": "Ahmadi17/BER/road",
+      "description": "Vertices in Berlin road network",
+      "geometry_type": "POINT",
+      "num_features": 428769,
+      "size": 36763024
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0ea",
+      "name": "Ahmadi17/BER/theatres",
+      "description": "Movie Theatres in Berlin",
+      "geometry_type": "POINT",
+      "num_features": 141,
+      "size": 13127
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0ee",
+      "name": "Ahmadi17/BER/busstops",
+      "description": "Bus stops in Berlin",
+      "geometry_type": "POINT",
+      "num_features": 5499,
+      "size": 518458
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0e8",
+      "name": "Ahmadi17/BER/coffeshops",
+      "description": "Coffee shops in Berlin",
+      "geometry_type": "POINT",
+      "num_features": 1002,
+      "size": 93849
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0ef",
+      "name": "Ahmadi17/BER/subwaystops",
+      "description": "Subway stops in Berlin",
+      "geometry_type": "POINT",
+      "num_features": 290,
+      "size": 27558
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0ec",
+      "name": "Ahmadi17/BER/bars",
+      "description": "Pubs and Bars in Berlin",
+      "geometry_type": "POINT",
+      "num_features": 958,
+      "size": 89640
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0eb",
+      "name": "Ahmadi17/BER/pharmacies",
+      "description": "Pharmacies in Berlin",
+      "geometry_type": "POINT",
+      "num_features": 589,
+      "size": 55118
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0ed",
+      "name": "Ahmadi17/BER/gas",
+      "description": "Gas stations in Berlin",
+      "geometry_type": "POINT",
+      "num_features": 180,
+      "size": 16796
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0e9",
+      "name": "Ahmadi17/BER/atmbanks",
+      "description": "ATM Banks in Berlin",
+      "geometry_type": "POINT",
+      "num_features": 597,
+      "size": 55938
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0f1",
+      "name": "Ahmadi17/OSL/restaurants",
+      "description": "Restaurants in Oslo",
+      "geometry_type": "POINT",
+      "num_features": 628,
+      "size": 58812
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0f3",
+      "name": "Ahmadi17/OSL/atmbanks",
+      "description": "ATM Banks in Oslo",
+      "geometry_type": "POINT",
+      "num_features": 51,
+      "size": 4726
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0f0",
+      "name": "Ahmadi17/OSL/road",
+      "description": "Vertices in Oslo road network",
+      "geometry_type": "POINT",
+      "num_features": 305175,
+      "size": 26133940
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0f4",
+      "name": "Ahmadi17/OSL/theatres",
+      "description": "Movie Theatres in Oslo",
+      "geometry_type": "POINT",
+      "num_features": 110,
+      "size": 10228
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0f5",
+      "name": "Ahmadi17/OSL/pharmacies",
+      "description": "Pharmacies in Oslo",
+      "geometry_type": "POINT",
+      "num_features": 110,
+      "size": 10228
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0f2",
+      "name": "Ahmadi17/OSL/coffeshops",
+      "description": "Coffee shops in Oslo",
+      "geometry_type": "POINT",
+      "num_features": 325,
+      "size": 30384
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0f6",
+      "name": "Ahmadi17/OSL/bars",
+      "description": "Pubs and Bars in Oslo",
+      "geometry_type": "POINT",
+      "num_features": 120,
+      "size": 11128
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0f8",
+      "name": "Ahmadi17/OSL/busstops",
+      "description": "Bus stops in Oslo",
+      "geometry_type": "POINT",
+      "num_features": 988,
+      "size": 92301
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0f9",
+      "name": "Ahmadi17/OSL/subwaystops",
+      "description": "Subway stops in Oslo",
+      "geometry_type": "POINT",
+      "num_features": 176,
+      "size": 16598
+    },
+    {
+      "_id": "5e7ea899136f30e5f015e0f7",
+      "name": "Ahmadi17/OSL/gas",
+      "description": "Gas stations in Oslo",
+      "geometry_type": "POINT",
+      "num_features": 88,
+      "size": 8170
+    },
+    {
+      "_id": "5f081186191e2c7f0e4eddef",
+      "name": "Riverside/Landuse",
+      "description": "The General Plan provides new land use designations for all parcels in the unincorporated area of Riverside County as adopted October 7th, 2003, updated through February 2015 with GPAs 503, 572, 585, 617, 655, 658, 662, 671, 672, 676, 677, 679, 680, 683, 687, 688, 689, 693, 696, 698, 701, 702, 704, 707, 712, 714, 716, 717, 719, 722, 726, 727, 728, 730, 738, 740, 741, 742, 746, 747, 749, 750, 754, 758, 760, 761, 764, 767, 768, 772, 774, 775, 776, 778, 782, 784, 786, 787, 792, 794, 795, 797, 800, 807, 809, 811, 812, 815, 817, 820, 821, 825, 826, 831, 834, 836, 838, 842, 844, 846, 850, 853, 859, 860, 863, 876, 878, 880, 881, 882, 887, 890, 895, 897, 905, 910, 912, 918, 936, 951, 971, 1047, 1048, 1051, 1052, 1053, 1065, 1072, 1095, 1101, 1105, 1107, 1110. While delivery of this data was received by the County at this time, please be advised that GIS has NOT OFFICIALLY VERIFIED the data or PERFORMED ADEQUATE QUALITY CONTROL VALIDATION for ACCURACY or DISCREPANCIES. In addition, consistency review is planned for comparison of current Zoning classifications with General Plan designations. Until completion of this review, please be aware that discrepancies can occur on any parcel. *The data now reflects the current (05/06/13) city boundaries, March Joint Powers Authority landuse designations have been removed. Please contact MJPA for landuse information. ***Please use the cartographic representations (Landuse, Overlay, Foundation Component) within this data layer for all map products*** Maintained by Stella Spadafora 03/2015",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 10243,
+      "num_points": 1277871,
+      "size": 22536953
+    },
+    {
+      "_id": "5f091841b523b8527f35f9c2",
+      "name": "Riverside/WaterDistricts",
+      "description": "Minor water districts provide services to local communities and operate within the boundaries of larger \"major\" water distircts.",
+      "geometry_type": "POLYGON",
+      "num_features": 77,
+      "num_points": 123618,
+      "size": 1994057
+    },
+    {
+      "_id": "5f09187db523b8527f35f9c3",
+      "name": "Riverside/Parks",
+      "description": "This data layer contains polygon features representing public parks of Riverside County. Included within the data are national forests and parks, county parks and preserves, city parks, and community parks. The data is collected from various government agencies such as the city governments, park and recreation districts, county and state governments, and US Forest Service. Spatial accuracy of parks is based of Riverside County parcels. Due to parcel shift, please perform spatial analysis with care.*Updated 08/22/2012 with parks from City of Riverside, Moreno Valley, and Riverside vicinity. ",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 529,
+      "num_points": 143195,
+      "size": 2456460
+    },
+    {
+      "_id": "5f0918b8b523b8527f35f9c4",
+      "name": "Riverside/FaultZones",
+      "description": "County Faults/Fault Zones (Per Riverside County General Plan 10/2003). Alquist-Priolo Earthquake Fault Zones have been designated by the California Division of Mines and Geology for the Elsinore, San Jacinto, and San Andreas fault zones in Riverside County. Within the rapidly growing county, State A-P mapping has not kept pace with development. The County of Riverside has zoned fault systems and required similar special studies prior to development. These are referred to as County Fault Zones on Figure S-2 and in the Technical Background Report. Within A-P and County Fault Zones, proposed tracts of four or more dwelling units must investigate the potential for and setback from ground rupture hazards. As there are many active faults in Riverside County, with new fault strands being continually discovered, all proposed structures designed for human occupancy should be required to investigate the potential for and setback from ground rupture. Also of concern are structures, not for human occupancy, that can cause harm if damaged by an earthquake, such as utility, communications, and transportation lifelines. The County regulates most development projects within earthquake fault zones (Figure S-2). Projects include all land divisions and most structures for human occupancy. Before a project can be permitted within an A-P Earthquake Fault Zone, County Fault Zone, or within 150 feet of any other potentially active or active fault mapped in published United States Geological Survey (USGS) or California Division of Mining and Geology (CDMG) reports, a geologic investigation must demonstrate that proposed buildings will not be constructed across active faults.Updated 2/2016 with Thermal and Indio California Geologic Survey Quads",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 186,
+      "num_points": 46081,
+      "size": 779986
+    },
+    {
+      "_id": "5f0918fbb523b8527f35f9c5",
+      "name": "Riverside/Subdivision",
+      "description": "The Subdivision Map Act requires that agencies imposing fees have a general drainage plan for the fee area, a special fund for the fees and an equitable distribution of the fees prior to implementation. Since the District does not have land use authority, it cannot implement drainage fees directly. The District must therefore request that the County and/or local cities adopt drainage fees within their jurisdictions for the District. The District generally agrees to create the special funds for the fees and to prepare an ADP. The ADP is a document specifically prepared for the County and cities to adopt. The Area Drainage Plan is essentially the Master Drainage Plan with additional language supporting the costs and distribution of the fee within the plan area. To ensure the equitable distribution of fees, the ADP/MDP boundaries are generally based on watersheds. The total costs of facilities within the watershed are first calculated. The watershed area is then adjusted to discount publicly owned lands and areas on steep slopes not likely to develop. Finally, the total facility cost is divided by the revised watershed area to determine a per-acre fee for the plan area. Due to State Law, the collection of drainage fees varies depending on the type of development. Developments falling under the Subdivision Map Act (those requiring a division of lands) pay fees on a per-acre basis. Developments falling outside of the Subdivision Map Act (known as discretionary developments) can only be assessed fees based on their impacts on the watershed. The ADP Rules and Regulations state that these impacts can be related to the amount of impervious surface area that the development creates. Therefore, discretionary developments are charged not on a gross acreage basis, but on the total impervious acreage created by their development.",
+      "geometry_type": "POLYGON",
+      "num_features": 24,
+      "num_points": 23047,
+      "size": 373792
+    },
+    {
+      "_id": "5f091931b523b8527f35f9c6",
+      "name": "Riverside/MAC",
+      "description": "MACs - Municipal Advisory Councils, and CCs - Community Councils, are established by the Board of Supervisors. They are bodies appointed by the Board to provide an extra avenue for communication from the affected communities back to the Board member who represents them, about issues of concern to them. Their boundaries come from the Supervisors who established them.NAME: CAC/MAC nameTYPE: \"MAC\" = Municipal Advisory Councils, \"CC\" = Community CouncilMaintained by Mickey Zoleizo, 9/2015",
+      "geometry_type": "POLYGON",
+      "num_features": 33,
+      "num_points": 73210,
+      "size": 1177271
+    },
+    {
+      "_id": "5f091966b523b8527f35f9c7",
+      "name": "Riverside/CitySphere",
+      "description": "This data set of polygon feature represents Riverside County's City Sphere of Influence. Areas that are affected by a neighboring City, but are not annexed to them. Topology has been run and all gaps and overlaps have been fixed. The data has been adjusted to match Riverside County Parcel Boundaries. Maintained by Stella Spadafora: 5/2015",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 105,
+      "num_points": 113485,
+      "size": 1834147
+    },
+    {
+      "_id": "5f0919a3b523b8527f35f9c8",
+      "name": "Riverside/AreaPlan",
+      "description": "This is the Area Plan Boundary for the Riverside County Integrated Plan (RCIP).AP_CODE: Area Plan NumberNAME: Area Plan NameACRES: Acres derived from areaSQ_MILES: Square miles derived from area. last updated by Emily Lee 3/23/2016 after GPA960, GPAs 2010-2015, and GPA960 ERRATA",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 22,
+      "num_points": 149709,
+      "size": 2399722
+    },
+    {
+      "_id": "5f0919d5b523b8527f35f9c9",
+      "name": "Riverside/AirportInfluence",
+      "description": "The Airport Influence Area is used for planning purposes and for disclosure purposes relating to real estate.LOC_ID: FAA designated Airport call signNAME: Airport name",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 16,
+      "num_points": 4678,
+      "size": 77760
+    },
+    {
+      "_id": "5f091a06b523b8527f35f9ca",
+      "name": "Riverside/MSHCP",
+      "description": "MSHCP Narrow Endemic Plant Species Survey Areas (NEPSSA)These survey areas were identified based on the presence of select soils, existing occurrence data for Narrow Endemic Plant Species (UC Riverside database and CNDDB), personal communication with the USFWS and Fred Roberts. Select soils were digitized from 1971 Soil Conservation Service Soil Survey (Knecht 1971). SPECIES OF CONCERN AREA ID:AREA 1: Allium munzii, Ambrosia pumila, Dodecahema leptoceras, Dudleya multicaulisAREA 2: Allium munzii, Ambrosia pumila, Dudleya multicaulis, Orcuttia californica, Trichocoronis wrightii var wrightiiAREA 3: Navarretia fossalis, Orcuttia californica, Trichocoronis wrightii var wrightiiAREA 3a: Navarretia fossalis, Orcuttia californica, Trichocoronis wrightii var wrightiiAREA 4: Allium munzii, Orcuttia californicaAREA 5: Dodecahema leptocerasAREA 6: Arabis johnstonii, Calochortus palmeri var. munzii, Galium angustifolium ssp. jacinticumAREA 7: Phacelia stelllarisAREA 8: Allium marviniiAREA 9: Dudleya multicaulis, Satureja chandleri, Sibaropsis hammittii",
+      "geometry_type": "POLYGON",
+      "num_features": 12,
+      "num_points": 2020,
+      "size": 34036
+    },
+    {
+      "_id": "5f091a3eb523b8527f35f9cb",
+      "name": "Riverside/Zoning",
+      "description": "This is the Zoning polygon layer for planning purposes",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 12844,
+      "num_points": 2047939,
+      "size": 35125080
+    },
+    {
+      "_id": "5f091a65b523b8527f35f9cc",
+      "name": "Riverside/ZIP",
+      "description": "ZIP Code boundaries were developed from street delivery 5-digit ZIP Codes. These polygons identify areas where mail is delivered (from a city block or two to a whole rural town).ZIPCODE: Zip Code numberNAME: Community name, per USPS.",
+      "geometry_type": "POLYGON",
+      "num_features": 76,
+      "num_points": 24259,
+      "size": 399248
+    },
+    {
+      "_id": "5f091a87b523b8527f35f9cd",
+      "name": "Riverside/WaterDistrict2",
+      "description": "This data set of polygon feature represents Riverside County's water district",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 23,
+      "num_points": 68706,
+      "size": 1103059
+    },
+    {
+      "_id": "5f091aafb523b8527f35f9ce",
+      "name": "Riverside/Township",
+      "description": "This layer contains the Township and Range data for the County of Riverside.",
+      "geometry_type": "POLYGON",
+      "num_features": 227,
+      "num_points": 11522,
+      "size": 213862
+    },
+    {
+      "_id": "5f091adbb523b8527f35f9cf",
+      "name": "Riverside/Supervisorial",
+      "description": "This data set of polygon features represents Riverside County's Supervisorial districts",
+      "geometry_type": "POLYGON",
+      "num_features": 5,
+      "num_points": 93556,
+      "size": 1497571
+    },
+    {
+      "_id": "5f091b00b523b8527f35f9d0",
+      "name": "Riverside/CountyPlans",
+      "description": "This data set of polygon features represents Riverside County's specific plans. A specific plan is used to facilitate effective implementation of the general plan. The specific plan must specify in detail the land uses, public and private facilities needed to support the land uses, phasing of development, standards for the conservation, development, and use of natural resources, and a program of implementation measures, including financing measures.Maintained by Stella Spadafora, 2/2016",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 745,
+      "num_points": 160238,
+      "size": 2759170
+    },
+    {
+      "_id": "5f091b1fb523b8527f35f9d1",
+      "name": "Riverside/PLSS",
+      "description": "This data set of polygon features represents Public Land Survey System (PLSS) sections within the County of Riverside.\r\n",
+      "geometry_type": "POLYGON",
+      "num_features": 7349,
+      "num_points": 51889,
+      "size": 2042809
+    },
+    {
+      "_id": "5f091b43b523b8527f35f9d2",
+      "name": "Riverside/Policies",
+      "description": "Policies are statements that guide the course of action the County must take to achieve the goals outlined in the three guidance documents, Consensus Planning principles, Vision and General Plan Principles.",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 62,
+      "num_points": 70609,
+      "size": 1143674
+    },
+    {
+      "_id": "5f091b65b523b8527f35f9d3",
+      "name": "Riverside/Cities",
+      "description": "CITYNAME: City nameANNEXATION: Annexation numberLAFCO_NUM: Local Area Formation Commission numberRECORDED_DATE: Date of recordation for annexationINST_NUM: Recorders office instrument numberCITY_FIPS: Federal Information Processing Standard city numberMaintained by Stella Spadafora: 5/2015",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 463,
+      "num_points": 340873,
+      "size": 5552168
+    },
+    {
+      "_id": "5f091b92b523b8527f35f9d4",
+      "name": "Riverside/IncorporatedCityBoundaries",
+      "description": "This data set of polygon features represents Riverside County's Incorporated City Boundaries. Topology has been run and all gaps and overlaps have been fixed. The data has been adjusted to match Riverside County Parcel Boundaries. The city name field is used to represent the citys' name. Every polygon that represents an incorporated city must have a city name.Maintained by Stella Spadafora, 05/2015",
+      "geometry_type": "POLYGON",
+      "num_features": 32,
+      "num_points": 218908,
+      "size": 3508264
+    },
+    {
+      "_id": "5f091bbbb523b8527f35f9d5",
+      "name": "Riverside/KangarooRat",
+      "description": "This data set of polygon features represents Stephen's Kangaroo Rat core reserves within Riverside County",
+      "geometry_type": "POLYGON",
+      "num_features": 43,
+      "num_points": 22597,
+      "size": 371499
+    },
+    {
+      "_id": "5f091be6b523b8527f35f9d6",
+      "name": "Riverside/WMSHCP",
+      "description": "WMSHCP Burrowing Owl Survey Area1 = Yes0 = No",
+      "geometry_type": "POLYGON",
+      "num_features": 1765,
+      "num_points": 145186,
+      "size": 2545694
+    },
+    {
+      "_id": "5f091c11b523b8527f35f9d7",
+      "name": "Riverside/APN",
+      "description": "APN: Assessor Parcel NumberASMT: Assessment numberREALUSE: Assessor Real Use CodePrimary code \"C\" = CommercialPrimary code \"A\" or \"P\" = AgriculturalAll other Primary codes = ResidentialDESCRIPTION: Open description field for notes regarding address, if anyDIR: Directional prefix for site address. N, S, E, or WHOUSE NUMBER: Site address numberSTREET NAME: Site address street nameSTREET TYPE: Site address street suffixUNIT: Unit number, if anyCITY: Site address city locationZIP: Site address zip codeNUMBER OF UNITS: The number of units. 0 is assigned to metersADDRESS TYPE: 1. Single Family Residence2. Residential 2-3 unit3. Condo4. Mobile Home5. Apartment6. Commercial7. Second Unit8. Meter9. Cell Tower10. TentativeLOT: Legal lot numberLEGAL: Recorded documentADDRESS: Concatenated site address field created from DIR, HOUSE NUMBER, STREET NAME and STREET TYPE fieldsDATE EDITED: Internal attributeGlobalID: Internal attributeINCORPORATED: Internal attribute for tracking County or City addressesADDRESS_ID: Unique ID for database purposes.X_COORDINATE: X coordinate in State Plane.Y_COORDINATE: Y coordinate in State Plane.LAT_COORDINATE: Lattitude coordinate. LONG_COORDINATE: Longitude coordinate",
+      "geometry_type": "POINT",
+      "num_features": 816494,
+      "size": 425393374
+    },
+    {
+      "_id": "5f091c34b523b8527f35f9d8",
+      "name": "Riverside/WesternProperties",
+      "description": "This feature class contains properties within Western Riverside County owned, managed or maintained by public agencies for the purposes of conservation. Additional reserve lands that contribute toward the MSHCP acreage goal of 153,000 acres of conservation, are depicted in an additonal data set called RCA MSHCP Conserved Lands. Together these two datasets represent a more complete portrayal of open space areas reserved for conservation",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 2634,
+      "num_points": 218604,
+      "size": 5331180
+    },
+    {
+      "_id": "5f091c59b523b8527f35f9d9",
+      "name": "Riverside/AdjacentCounties",
+      "description": "To show the adjacent counties of the County of Riverside, CA.",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 13,
+      "num_points": 69328,
+      "size": 1111382
+    },
+    {
+      "_id": "5f091cccb523b8527f35f9dc",
+      "name": "Riverside/CSA",
+      "description": "CSA_NUMBER: The CSA numberNAME: Name of CSASUBZONE: Wine Country referenceST_LIGHTING: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"ST_SWEEPING: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"PARK_REC: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"FIRE_PROTECT: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"SEWER: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"WATER: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"TRASH: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"ROAD_MAINT: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"FLOOD_CTRL: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"POLICE: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"DRAINAGE_CTRL: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"LIBRARY: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"LANDSCAPING: \"Y\" or \"N\" to denote if CSA funds activity. Blank is an assumed \"N\"SPHERE_NUMBER: Not used",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 161,
+      "num_points": 71343,
+      "size": 1174899
+    },
+    {
+      "_id": "5f091cf5b523b8527f35f9dd",
+      "name": "Riverside/WMSHCP",
+      "description": "WMSHCP Mammal Species Survey AreasMammal Survey Areas by Species:Mammal Code 1 = Aguanga kangaroo rat and L.A. pocket mouseMammal Code 2 = L. A. pocket mouse onlyMammal Code 3 = San Bernardino kangaroo rat and L.A. pocket mouse",
+      "geometry_type": "POLYGON",
+      "num_features": 1765,
+      "num_points": 145186,
+      "size": 2545694
+    },
+    {
+      "_id": "5f091d5bb523b8527f35f9de",
+      "name": "Riverside/AirportRunway",
+      "description": "This data set of line feature represents Riverside County's airport runways.RWY_ID: FAA designated runway call signST_NAME: State location of runwaySTFIPS: State designationRWY_LEN: Length of runway in feet, if availableRWY_WDTH: Width of runway in feet, if availableRWY_SFC_TY: Runway surface typeAFSC: Aggregate Friction Seal CoatASPH: AsphaltCONC: ConcreteDIRT: DirtGRVD: GroovedGRVL: GravelPFC: Porous Friction CoursesPSP: Pierced Steel PlankRFSC: Rubberized Friction Seal CoatTURF: TurfTRTD: TreatedWC: Wire CombedRWY_STATUS: Status of runway (Proposed/Existing)NAME: Name of airportLOC_ID: FAA assinged airport call sign",
+      "geometry_type": "LINESTRING",
+      "num_features": 38,
+      "num_points": 77,
+      "size": 8870
+    },
+    {
+      "_id": "5f091d91b523b8527f35f9df",
+      "name": "Riverside/CompatibilityZones",
+      "description": "This layer shows all adopted compatibility zones for airports in or around Riverside \r\nCounty.LOC_ID: FAA designated Airport call sign\r\nNAME: Airport name\r\nZONES: Compatibility zone names\r\nMaintained by Mickey Zolezio 5/2015\r\nFor specific information regarding Compatibility Zones go to:http://www.rcaluc.org/",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 245,
+      "num_points": 25428,
+      "size": 456149
+    },
+    {
+      "_id": "5f091dbab523b8527f35f9e0",
+      "name": "Riverside/AgriculturePreserves",
+      "description": "This data set of polygon feature represents Riverside County's Agriculture Preserves.STATUS: \"O\" for Original or \"A\" for AmendmentAP_NAME: Ag Preserve nameAP_NUMBER: Numbered for a given area. Example: AP_Number 5 for Winchester represents the 5th preserve in that area.MAP_NUMBER: A unique number representing the establishment, deletion or enlargement of an agpreserveAP_FULL_NAME: Contains combined attributes from AP_NAME + AP_NUMBER + MAP_NUMBER.ADOPTED_DATE: Date of adoptionCROP_TYPE: Crop type for a particular agpreserveNONR_DATE: Date of issue for a non-renewalACTIVE: \"Y\"/\"N\" to signify if agpreserve is active or notAMENDMENT_NO: Recorded amendment number",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 1012,
+      "num_points": 66796,
+      "size": 1281384
+    },
+    {
+      "_id": "5f091de4b523b8527f35f9e1",
+      "name": "Riverside/Watersheds",
+      "description": "Watersheds were derived from data directly received from the State of California. The coverage shows Watershed boundaries as defined by the State Water Resources Control Board",
+      "geometry_type": "POLYGON",
+      "num_features": 25,
+      "num_points": 32154,
+      "size": 521614
+    },
+    {
+      "_id": "5f091e09b523b8527f35f9e2",
+      "name": "Riverside/WaterBodies",
+      "description": "This data set of polygon features represents Riverside County's water bodies.",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 26,
+      "num_points": 33067,
+      "size": 532807
+    },
+    {
+      "_id": "5f091e36b523b8527f35f9e3",
+      "name": "Riverside/IndianLands",
+      "description": "Depicts areas in Riverside County desingated as Indian Lands, based on the Public Land Survey System to align with the Township, Range, and Sections as they are described. Data was downloaded from the Bureau of Indian Affairs (BIA) website, then clipped with Riverside County boundaries. Please note that some tribal lands go beyond Riverside County boundaries. Data was last confirmed on 10/1/2015 and processed by RCIT-GIS, Emily Lee",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 12,
+      "num_points": 4168,
+      "size": 70684
+    },
+    {
+      "_id": "5f091e61b523b8527f35f9e4",
+      "name": "Riverside/QuadIndex7.5",
+      "description": "This data set of polygon feature represents Riverside County's 7.5 minute quad Index",
+      "geometry_type": "POLYGON",
+      "num_features": 162,
+      "num_points": 837,
+      "size": 30190
+    },
+    {
+      "_id": "5f091e83b523b8527f35f9e5",
+      "name": "Riverside/QuadIndex15",
+      "description": "This data set of polygon feature represents Riverside County's 15-minute quad index.",
+      "geometry_type": "POLYGON",
+      "num_features": 56,
+      "num_points": 280,
+      "size": 12208
+    },
+    {
+      "_id": "5f091ea1b523b8527f35f9e6",
+      "name": "Riverside/FMMP",
+      "description": "Established in 1982, Government Code Section 65570 mandates FMMP to biennially report on the conversion of farmland and grazing land, and to provide maps and data to local government and the public",
+      "geometry_type": "POLYGON",
+      "num_features": 7473,
+      "num_points": 1002801,
+      "size": 17398140
+    },
+    {
+      "_id": "5f091ec7b523b8527f35f9e7",
+      "name": "Riverside/CriteriaCells",
+      "description": "This is the dissolved version of the Criteria Cells adopted by the BOS on 6/17/2003.",
+      "geometry_type": "POLYGON",
+      "num_features": 40,
+      "num_points": 1557,
+      "size": 30656
+    },
+    {
+      "_id": "5f091ef6b523b8527f35f9e8",
+      "name": "Riverside/AirportBoundaries",
+      "description": "The Airports layer shows the boundary of the airport property.NAME: Airport nameLOC_ID: FAA designated airport call sign",
+      "geometry_type": "POLYGON",
+      "num_features": 36,
+      "num_points": 6592,
+      "size": 112764
+    },
+    {
+      "_id": "5f091f1eb523b8527f35f9e9",
+      "name": "Riverside/CDP",
+      "description": "  APIs \r\nA census-designated place (CDP) is a concentration of population identified by the United States Census Bureau for statistical purposes. CDPs are delineated for each decennial census as the statistical counterparts of incorporated places such as cities, towns and villages. CDPs are populated areas that lack separate municipal government, but which otherwise physically resemble incorporated places. CDPs are delineated solely to provide data for settled concentrations of population that are identifiable by name but are not legally incorporated under the laws of the state in which they are located. They include small rural communities, colonias located along the U.S. border with Mexico, and unincorporated resort and retirement communities. The boundaries of a CDP have no legal status. Thus, they may not always correspond with the local understanding of the area or community with the same name. However, criteria established for the 2010 Census require that a CDP name \"be one that is recognized and used in daily communication by the residents of the community\" (not \"a name developed solely for planning or other purposes\") and recommend that a CDP's boundaries be mapped based on the geographic extent associated with residents' use of the place name.",
+      "geometry_type": "POLYGON",
+      "num_features": 53,
+      "num_points": 22362,
+      "size": 365318
+    },
+    {
+      "_id": "5f091f48b523b8527f35f9ea",
+      "name": "Riverside/KangarooRatPlan",
+      "description": "This data set of polygon features represents the Stephen's Kangaroo Rat plan and fee area within Riverside County.",
+      "geometry_type": "POLYGON",
+      "num_features": 2,
+      "num_points": 1105,
+      "size": 17962
+    },
+    {
+      "_id": "5f091f6db523b8527f35f9eb",
+      "name": "Riverside/AreaPlanSubunits",
+      "description": "Area plan subunits for the MSHCP Criteria Area.",
+      "geometry_type": "POLYGON",
+      "num_features": 3,
+      "num_points": 539,
+      "size": 9017
+    },
+    {
+      "_id": "5f091f8db523b8527f35f9ec",
+      "name": "Riverside/MSHCPCellGroups",
+      "description": "MSHCP Cell Groups",
+      "geometry_type": "POLYGON",
+      "num_features": 319,
+      "num_points": 4941,
+      "size": 111686
+    },
+    {
+      "_id": "5f091fbdb523b8527f35f9ed",
+      "name": "Riverside/WesternMSHCP",
+      "description": "This is the boundary layer of the Mulit-Species Habitat Conservation Plan (MSHCP). Western MSHCP boundary also used for Western MSHCP Open Space Fee Area. Per Ord. 810, Sec 8.Section 8. Western Riverside County Multiple Species Habitat Conservation Plan Fee Area Boundary. The boundary of the Western Riverside County Multiple Species Habitat Conservation Plan Fee Area is the same as the MSHCP boundary as set forth in that document entitled MSHCP Plan Area Map dated June 2003, which is on file with the Clerk of the Board",
+      "geometry_type": "POLYGON",
+      "num_features": 2,
+      "num_points": 1105,
+      "size": 17896
+    },
+    {
+      "_id": "5f091fdeb523b8527f35f9ee",
+      "name": "Riverside/DesertTortoiseArea",
+      "description": "This data set of polygon features represents Riverside County's desert tortoise area.UNIT_NAME: Name of desert tortoise areas",
+      "geometry_type": "POLYGON",
+      "num_features": 4,
+      "num_points": 20318,
+      "size": 325572
+    },
+    {
+      "_id": "5f092003b523b8527f35f9ef",
+      "name": "Riverside/VegetationTypes",
+      "description": "These polygons represent Western Riverside County's Vegetation types. It was originally obtained from WRCOG and produced by KTUA consultants. Source date approx. 1994. RBF consultants made minor updates through field verification.",
+      "geometry_type": "POLYGON",
+      "num_features": 17294,
+      "num_points": 1282830,
+      "size": 25684702
+    },
+    {
+      "_id": "5f092025b523b8527f35f9f0",
+      "name": "Riverside/CriteriaAreaCells",
+      "description": "Criteria Area Cells for the MSHCP",
+      "geometry_type": "POLYGON",
+      "num_features": 37,
+      "num_points": 2812,
+      "size": 49399
+    },
+    {
+      "_id": "5f092072b523b8527f35f9f1",
+      "name": "Riverside/StreetCenterlines",
+      "description": "This data set of line features represent Riverside County's recorded street centerlines.This data set was designed to carry out functions of the Transportation department and is not a true street network layer. Centerlines do not have complete \"connectivity\" due to the fact that this layer is primarily roads that have been recorded but does not necessarily contain all roads. OBJECTID - Internal feature number. STNAME - Recorded name of the centerline. TYPE - Used to classify roads, primarily by surface type. Description of the codes found in the attribute \"TYPE\" TYPE DESCRIPTION C01 Federal Aid Interstate C02 State Highways C03 F.A.U. Maintained C04 F.A.S. Maintained C05 Paved Surface Maintained C06 Paved Surface (Traveled) C07 Graveled Surface Maintained C08 Graveled Surface (Traveled) C09 Dirt Surface Maintained C10 Dirt Surface (Traveled) C11 Accepted For Public Use C12 Non-County/Accepted for P.U. C13 Non-County road C14 Vacated C15 Abandon C16 Maintained F.A.U./Non-County C17 Maintained F.A.S./Non-County C18 Maintained Paved/Accepted C19 Maintained Paved/Non-County C20 Maintained Paved/Vacated C21 Maintained Gravel/Accepted C22 Maintained Gravel/Non-County C23 Maintained Gravel/Vacated C24 Maintained Dirt/Accepted C25 Maintained Dirt/Non-County C26 Maintained Dirt/Vacated C27 Accepted/Vacated C28 Maintained Under Contract C29 City Road C30 Paved Maintained/Dirt Maintained C31 Dedicated and Accepted/CFD Maintained W01 Maintained for City W02 Maintained for City/Non-County W03 Maintained for City/Non-County (Reversed) W04 Maintained for City/Accepted W05 F.A.U. Maintained/Maintained for City W06 Dirt Surface Maintained/Maintained for City W07 Paved Surface Maintained/Maintained for City W08 Graveled Surface Maintained/Maintained for City Z01 Traffic Division Modeling Connectivity Use Only (The \"W\" series within the TYPE field were initially created for the City of Wildomar, but have had their application expanded to include any Centerline where the County maintains the road for a City - typically for a limited period after a City's incorporation. The \"W\" will continue as a convention to make it easy to distinguish such roads from roads normally maintained by the County, even though it is understood that the \"W\" will lose its initial association with the City of Wildomar over time.). GENPLANTYPE - General Plan Classification of the Road. Not corrected for the RCLIS 2003 updated at thsi time. Description of the codes found in the attribute \"GENPLANTYPE\" GENPLANTYPE SYMBOL DESCRIPTION 01 101 FREEWAY 02 201 EXPRESSWAY 03 301 URBAN ARTERIAL 04 304 URBAN ARTERIAL (PROPOSED) 05 401 ARTERIAL 06 404 ARTERIAL (PROPOSED) 07 501 MOUNTAIN ARTERIAL 08 504 MOUNTAIN ARTERIAL (PROPOSED) 09 13 MAJOR 10 16 MAJOR (PROPOSED) 11 21 SECONDARY 12 24 SECONDARY (PROPOSED) 13 801 SPECIFIC PLAN ROAD 14 804 SPECIFIC PLAN ROAD (PROPOSED) 15 25 SCENIC ROUTE 16 28 SCENIC ROUTE (PROPOSED) (PROPOSED) indicates that the road is part of the \"General PLan Alignment\" but does not currently exist as a legal centerline. This type of centerline will be stored in the CENTERLINEREF data set. DIRECTION - Represents the direction of traffic flow. Presently not supported. NAMEID - Numerical representation of the recorded street name. Unique STNAME and NAMEID values are tracked in the STNMS table. RDNUMBER - Used by the Transportation Department to identify county maintained roads. Used for accounting purposes. SEGNUMBER - Used in combination with the RDNUMBER to uniquely identify an individual centerline, segment, or length. No longer supported. FLAG - Indicates whether or not an arc will be used in a street network data set. Presently not used because there is no street network data set. L_F_ADD - The starting address for the left side of the street. L_T_ADD - The ending address for the left side of the street. R_F_ADD - The starting address for the right side of the street. R_T_ADD - The ending address for the right side of the street. PRE_DIR - The street direction prefix. Example: 'E' for east. STREET_NAME - The base legal street name of the centerline. Example: \"MAIN\". STREET_TYPE - The Street Name Type abbreviation. Example: 'ST' for street. Valid values for the STREET_TYPE field are: ' ' - ' ' (No Type is a space) AVE - AVENUE BLVD - BOULEVARD CIR - CIRCLE CT - COURT CV - COVE DR - DRIVE EXPY - EXPRESSWAY FWY - FREEWAY HWY - HIGHWAY LN - LANE LOOP - LOOP PATH - PATH PKWY - PARKWAY PL - PLACE PT - POINT RD - ROAD SQ - SQUARE ST- STREET TER - TERRACE TRL - TRAIL WALK - WALK WAY - WAY SUF_DIR - The street direction suffix. Example: \"N' for north. TRACT - The tract map number in which the centerline can be found. MODIFIED - Modified Date CREATED - Created Date SOURCE_NOTES - References to legal documentation related to the Centerline found during research, including such things as recordation histroy, name change history, and acceptance for or termination of maintenance information, FULL_NAME - Name used to construct ROUTE_NAME field values. Used to detect changes in the STNAME value. AREA_PLAN_ABBREVIATION - Abbreviated Area Plan Name used to create ROUTE_NAME Valid values for AREA_PLAN_ABBREVIATION are: DESCN - Desert Center ECDES - East County/Desert ECVAP - Eastern Coachella Valley Plan ELSIN - Lake Elsinore EVALE - Eastvale HIGHG - Highgrove HVWIN - Harvest Valley/Winchester JURUP - Jurupa LAKEV - Lakeview/Nuevo LMATH - Lake Mathews MARCH - March MEADV - Mead Valley PASS - Pass Area PVERD - Palo Verde Valley RECHE - Reche Canyon REMAP - REMAP (Riverside Extended Mountain Area Plan) RIVER - Riverside/Corona/Norco SANJA - San Jacinto Valley SBCO - San Bernardino County SUNCI - Sun City/Menifee Valley SWAP - Southwest Area Plan TEMES - Temescal Valley WCVAP - Western Coachella Valley Area Plan SUBROUTE - Optional Identifier used to build ROUTE_NAME to separate branches or distiguish discontinuous portions of a street within an area plan that are unlikely to ever form a continuous route. ROUTE_NAME - Primary field used to construct a Linear Referencing derivative of the Centerlines layer. THis values is a component of ROUTE_ALT1 and ROUTE_ALT2 and is overriden by those fields when they have values. ROUTE_DIR1 - Used with ROUTE_NAME to build values for ROUTE_ALT1 when there is a value assigned. ROUTE_ALT1 - First Alternative ROUTE_NAME value. Typically used for one-way streets that are oriented Norh or East. ROUTE_DIR2 - Used with ROUTE_NAME to build values for ROUTE_ALT2 when there is a value assigned. ROUTE_ALT2 - Second Alternative ROUTE_NAME value. Typically used for one-way streets that are oriented Souh or West. BUILD_PRIORITY - Used to create Linear Referenced Routes. Sets the corner from which to build routes. Valuid values for BUILD_PRIORITY are: UL - Upper Left (Default) LL - Lower Left UR - Upper Right LR - Lower Right LINE_LINK - Geometric ID of Centerline arc. Made up of the From X/Y coordinate, the To X/Y coordinate and the Length. Used to detect geometric changes to an existing Centerline. CL_ID - Duplicate of OBJECTID. USed for detecting newly added segments to the network each week or to relate and join exported versions of CENTERLINES back to the original CENTERLINE feature class.",
+      "geometry_type": "LINESTRING",
+      "num_features": 2985,
+      "num_points": 78620,
+      "size": 3419060
+    },
+    {
+      "_id": "5f09209fb523b8527f35f9f2",
+      "name": "Riverside/BuildingSafetyDepartment",
+      "description": "This featire class only contains permits administered by the Building and Safety Department.This feature class is updated by a python script each morning from the previous day's building permits. The script is named BRS_UPDATE.py and is located in the //agency/agencydfs/Tran/Files/rfairhur/Python_Scripts directory. The original data is stored in the Plus_Conversion_Data.gdb file geodatabase in the //agency/agencydfs/Tran/Files/rfairhur/Layers/Plus_Conversion_Data directory.The fields in this feature class are:APN: Assessor parcel number(s) associated with each permitCASE_ID: PLUS permit numberCASE_DESCR: Description of permitted activityCASE_MODULE: The PLUS module in which the case located. All permits in this feature class are in the PERMIT module.CASE_TYPE: The PLUS case type category of the caseCASE_WORK_CLASS: The PLUS work class subcategory of the caseDEPARTMENT: County department issuing permit. For this feature class, all permits have a value of BLD for the Building and Safety Department.CASE_STATUS: The PLUS permit statusAPPLIED_DATE: Date of permit applicationAPPROVED_DATE: Date of permit approvalCOMPLETED_DATE: Date of permitted activity completionEXPIRED_DATE: Date of permit expirationRECORDED_PAGE: The Recorder's book and page number location of the recorded map that created the APNSUBDIVISION_NAME: The Subdivision Name of the recorded map, either per the Assessors or per the Tract/Lot field converted from LMS as of 11/30/2017.LOT: The Assessors Lot field value for the APNBLOCK: The Assessors Block field value for the APNBUILDING_COUNT: The number of buildings covered by the permitUNIT_COUNT: The number of residential, commmercial or industrial units covered by the permit as assigned by the Building and Safety Department.FLOOR_COUNT: The number of floors in the building covered by the permitHEIGHT: The height of the (tallest) building covered by the permitFCC_CODE: Internal attributeBLD_TRACT: The Tract that created or will create the lot the building permit is located withinBLD_LOT: The Lot of the BLD_TRACT that contains or will contain the building permitNEW_APN: When available, the new APN used to replace the shape of the permit after maps have recorded.UNIT_STATS_COUNT: The TRANS_PLUS_RESIDENTIAL_PERMITS_STATS feature class uses this column of unit counts for the statistics it summarizes. This field is primarily maintained for counting BRS permits primary dwelling units, and excludes permits for Second Units, Casitas, Pool Houes, Guest Quarters and duplicate unit values on any multi-parcel permit from being countedLOCATION: General location of permitted activityMODEL_NUMBER: When available, the Model or Plan number of the residential permit. Parsed from CASE_DESCR when available.",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 21439,
+      "num_points": 1644237,
+      "size": 56785539
+    },
+    {
+      "_id": "5f0920cfb523b8527f35f9f3",
+      "name": "Riverside/StreetCenterlines2",
+      "description": "This data set of line features represent Riverside County's recorded street centerlines.This data set was designed to carry out functions of the Transportation department and is not a true street network layer. Centerlines do not have complete \"connectivity\" due to the fact that this layer is primarily roads that have been recorded but does not necessarily contain all roads. OBJECTID - Internal feature number. STNAME - Recorded name of the centerline. TYPE - Used to classify roads, primarily by surface type. Description of the codes found in the attribute \"TYPE\" TYPE DESCRIPTION C01 Federal Aid Interstate C02 State Highways C03 F.A.U. Maintained C04 F.A.S. Maintained C05 Paved Surface Maintained C06 Paved Surface (Traveled) C07 Graveled Surface Maintained C08 Graveled Surface (Traveled) C09 Dirt Surface Maintained C10 Dirt Surface (Traveled) C11 Accepted For Public Use C12 Non-County/Accepted for P.U. C13 Non-County road C14 Vacated C15 Abandon C16 Maintained F.A.U./Non-County C17 Maintained F.A.S./Non-County C18 Maintained Paved/Accepted C19 Maintained Paved/Non-County C20 Maintained Paved/Vacated C21 Maintained Gravel/Accepted C22 Maintained Gravel/Non-County C23 Maintained Gravel/Vacated C24 Maintained Dirt/Accepted C25 Maintained Dirt/Non-County C26 Maintained Dirt/Vacated C27 Accepted/Vacated C28 Maintained Under Contract C29 City Road C30 Paved Maintained/Dirt Maintained C31 Dedicated and Accepted/CFD Maintained W01 Maintained for City W02 Maintained for City/Non-County W03 Maintained for City/Non-County (Reversed) W04 Maintained for City/Accepted W05 F.A.U. Maintained/Maintained for City W06 Dirt Surface Maintained/Maintained for City W07 Paved Surface Maintained/Maintained for City W08 Graveled Surface Maintained/Maintained for City Z01 Traffic Division Modeling Connectivity Use Only (The \"W\" series within the TYPE field were initially created for the City of Wildomar, but have had their application expanded to include any Centerline where the County maintains the road for a City - typically for a limited period after a City's incorporation. The \"W\" will continue as a convention to make it easy to distinguish such roads from roads normally maintained by the County, even though it is understood that the \"W\" will lose its initial association with the City of Wildomar over time.). GENPLANTYPE - General Plan Classification of the Road. Not corrected for the RCLIS 2003 updated at thsi time. Description of the codes found in the attribute \"GENPLANTYPE\" GENPLANTYPE SYMBOL DESCRIPTION 01 101 FREEWAY 02 201 EXPRESSWAY 03 301 URBAN ARTERIAL 04 304 URBAN ARTERIAL (PROPOSED) 05 401 ARTERIAL 06 404 ARTERIAL (PROPOSED) 07 501 MOUNTAIN ARTERIAL 08 504 MOUNTAIN ARTERIAL (PROPOSED) 09 13 MAJOR 10 16 MAJOR (PROPOSED) 11 21 SECONDARY 12 24 SECONDARY (PROPOSED) 13 801 SPECIFIC PLAN ROAD 14 804 SPECIFIC PLAN ROAD (PROPOSED) 15 25 SCENIC ROUTE 16 28 SCENIC ROUTE (PROPOSED) 17 0 COLLECTOR(PROPOSED) indicates that the road is part of the \"General PLan Alignment\" but does not currently exist as a legal centerline. This type of centerline will be stored in the CENTERLINEREF data set. DIRECTION - Represents the direction of traffic flow. Presently not supported. NAMEID - Numerical representation of the recorded street name. Unique STNAME and NAMEID values are tracked in the STNMS table. RDNUMBER - Used by the Transportation Department to identify county maintained roads. Used for accounting purposes. SEGNUMBER - Used in combination with the RDNUMBER to uniquely identify an individual centerline, segment, or length. No longer supported. FLAG - Indicates whether or not an arc will be used in a street network data set. Presently not used because there is no street network data set. L_F_ADD - The starting address for the left side of the street. L_T_ADD - The ending address for the left side of the street. R_F_ADD - The starting address for the right side of the street. R_T_ADD - The ending address for the right side of the street. PRE_DIR - The street direction prefix. Example: 'E' for east. STREET_NAME - The base legal street name of the centerline. Example: \"MAIN\". STREET_TYPE - The Street Name Type abbreviation. Example: 'ST' for street. Valid values for the STREET_TYPE field are: ' ' - ' ' (No Type is a space) AVE - AVENUE BLVD - BOULEVARD CIR - CIRCLE CT - COURT CV - COVE DR - DRIVE EXPY - EXPRESSWAY FWY - FREEWAY HWY - HIGHWAY LN - LANE LOOP - LOOP PATH - PATH PKWY - PARKWAY PL - PLACE PT - POINT RD - ROAD SQ - SQUARE ST- STREET TER - TERRACE TRL - TRAIL WALK - WALK WAY - WAY SUF_DIR - The street direction suffix. Example: \"N' for north. TRACT - The tract map number in which the centerline can be found. MODIFIED - Modified Date CREATED - Created Date SOURCE_NOTES - References to legal documentation related to the Centerline found during research, including such things as recordation histroy, name change history, and acceptance for or termination of maintenance information, FULL_NAME - Name used to construct ROUTE_NAME field values. Used to detect changes in the STNAME value. AREA_PLAN_ABBREVIATION - Abbreviated Area Plan Name used to create ROUTE_NAME Valid values for AREA_PLAN_ABBREVIATION are: DESCN - Desert Center ECDES - East County/Desert ECVAP - Eastern Coachella Valley Plan ELSIN - Lake Elsinore EVALE - Eastvale HIGHG - Highgrove HVWIN - Harvest Valley/Winchester JURUP - Jurupa LAKEV - Lakeview/Nuevo LMATH - Lake Mathews MARCH - March MEADV - Mead Valley PASS - Pass Area PVERD - Palo Verde Valley RECHE - Reche Canyon REMAP - REMAP (Riverside Extended Mountain Area Plan) RIVER - Riverside/Corona/Norco SANJA - San Jacinto Valley SBCO - San Bernardino County SUNCI - Sun City/Menifee Valley SWAP - Southwest Area Plan TEMES - Temescal Valley WCVAP - Western Coachella Valley Area Plan SUBROUTE - Optional Identifier used to build ROUTE_NAME to separate branches or distiguish discontinuous portions of a street within an area plan that are unlikely to ever form a continuous route. ROUTE_NAME - Primary field used to construct a Linear Referencing derivative of the Centerlines layer. THis values is a component of ROUTE_ALT1 and ROUTE_ALT2 and is overriden by those fields when they have values. ROUTE_DIR1 - Used with ROUTE_NAME to build values for ROUTE_ALT1 when there is a value assigned. ROUTE_ALT1 - First Alternative ROUTE_NAME value. Typically used for one-way streets that are oriented Norh or East. ROUTE_DIR2 - Used with ROUTE_NAME to build values for ROUTE_ALT2 when there is a value assigned. ROUTE_ALT2 - Second Alternative ROUTE_NAME value. Typically used for one-way streets that are oriented Souh or West. BUILD_PRIORITY - Used to create Linear Referenced Routes. Sets the corner from which to build routes. Valuid values for BUILD_PRIORITY are: UL - Upper Left (Default) LL - Lower Left UR - Upper Right LR - Lower Right LINE_LINK - Geometric ID of Centerline arc. Made up of the From X/Y coordinate, the To X/Y coordinate and the Length. Used to detect geometric changes to an existing Centerline. CL_ID - Duplicate of OBJECTID. USed for detecting newly added segments to the network each week or to relate and join exported versions of CENTERLINES back to the original CENTERLINE feature class.FROM_X_COORDINATE, FROM_Y_COORDINATE, TO_X_COORDINATE and TO_Y_COORDINATE: The coordinate data for the end points of the line in numeric format.ROUTE_ORIENTED: Indicates if the line is drawn in the direction that corresponds to the Routes created based on the ROUTE_NAME fields.TRAVEL_DIRECTIONS: Indicates whether the road can be driven and in what directions. Values include \"Both Ways\", \"From-To\", \"To-From\" and \"No Ways\".CA_ROAD_SYSTEM_PAGE: The map page location of the California Roadway System (CRS) Maps containing the Centerline: See http://www.dot.ca.gov/hq/tsip/hseb/crs_maps/CA_ROAD_SYSTEM_INDEX: The map index grid location of the California Roadway System (CRS) Maps containing the Centerline: See http://www.dot.ca.gov/hq/tsip/hseb/crs_maps/CA_FUNCTIONAL_CLASS: The California Functional Classification of the Roadway per the CRS maps. Only classifications between 1 and 5 may qualify for state and federal funds. Classifications include:1 - Interstate2 - Other Freeway or Expressway3 - Other Principal Arterial4 - Minor Arterial5 - Major Collector6 - Minor Collector7 - LocalFEDERAL_ROUTE and FEDERAL_ROUTE_TYPE: The number of the Federal Interstate or U.S. Highway and the operational type of the facility, where applicable.STATE_ROUTE and STATE_ROUTE_TYPE: The number of the State Route or Highway and the operational type of the facility, where applicable.COUNTY_ROUTE: The number of a County Route.CITY_LEFT or CITY_RIGHT: The City or Community name to the left or right of the Centerline. Used for address geolocators.STATE: CA for Califonia. For geolocators that use the State field.ZIP_LEFT or ZIP_RIGHT: The ZIP code to the left or right of the Centerline. Used for address geolocators.FULL_NAME_MIXED_CASE: The full street name in mixed Upper and Lower case letters, sometimes also called Title case. May be used for labeling and geolocators.",
+      "geometry_type": "LINESTRING",
+      "num_features": 127597,
+      "num_points": 3468816,
+      "size": 164086103
+    },
+    {
+      "_id": "5f092120b523b8527f35f9f4",
+      "name": "Riverside/RoadBook",
+      "description": "This data set of polygon features represents Riverside County's road book page index.",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 444,
+      "num_points": 9062,
+      "size": 199612
+    },
+    {
+      "_id": "5f0921e1b523b8527f35f9f6",
+      "name": "Riverside/Highways",
+      "description": "A highways data layer based off TLMA.STREETS. This layer contains the highway type, number and speed limit fields. There is also an Alias field for alternative names. Latest changes - Changed a section of the I-215/SH-60 combined from a primary designation of SH-60 to I-215. SH-60 is now the alias in the section of I-215 between Riverside and Moreno Valley. Future changes - 90/60/215 Interchange configuration, 215/60 realignment. 04/24/09 - New state highway relinquishments on Highway 86, 195. Parts of those highways have been removed. Hwy 86S now Hwy 86.",
+      "geometry_type": "MULTILINESTRING",
+      "num_features": 1344,
+      "num_points": 42346,
+      "size": 899688
+    },
+    {
+      "_id": "5f092233b523b8527f35f9f7",
+      "name": "Riverside/TaxableCondominiums",
+      "description": "To graphically represent taxable condominiums within Riverside County. This layer is also joined with Assessor tables to provide additional information about each condominium. APN: Assessor Parcel NumberFLAG: Attribute used to group the polygon into a desired category.EX = Tax Exempt, PU = Public Utility, CM = Condominium/common area, MH = Mobile Home, TH: Townhouse, LL = Leased Land, PI = Possessory Interest, MR = Mineral RightsMAIL_TO_NAME: Name of person or organization for mailing purposesMAIL_TO_STREET: Mailing street addressMAIL_TO_CITY: Mailing cityMAIL_TO_ZIP: Mailing zipcodeHOUSE_NO: Site address numberDIR: Site address street directionSTREET: Site address street nameSUFFIX: Site address street typeCITY: Site address cityZIP: Site address zipcodeHOUSE_SUFF: Internal attributeUNIT: Site address unit numberREALUSE: Identifies the primary activity for which the parcel is being used, for appraisal purposesPRIMARY_CODE: The first position of the Use Code. Determines appraisal responsibility. - Primary Code \"C\" = Commercial- Primary Code \"A\" or \"P\" = Agricultural- All other Primary Codes = ResidentialSECONDARY_CODE: Second position of the Use Code. Identifies specific use.MULTI_CODE: Internal attributeTRACT: Tract numberACRE: AcreageRECORDERS_TYPE: CM, Communal lot. Classification of \"recorded book\"RECORD_BOOK: Book number of recorded bookRECORD_PAGE: Page number of recorded bookCNTY_CODE: Internal attributeLOT_TYPE: Internal attributeLOT: Lot numberBLOCK_NO: Internal attributeSUB_NAME: Subdivision nameCAME_FROM: The parcel number (history) that was deleted by the current parcel numberTAXABILITY: Internal attributeTRA: Tax Rate Area, Used to apportion tax revenue both the the State and the CountyLAND: Assessed land valueSTRUCTURE: Assessed structure valueOWNER1_LAST_NAME: Last name of owner 1OWNER1_FIRST_NAME: First name of owner 1OWNER1_MID_NAME: Middle name of owner 1OWNER2_LAST_NAME: Last name of owner 2OWNER2_FIRST_NAME: First name of owner 2OWNER2_MID_NAME: Middle name of owner 2OWNER3_LAST_NAME: Last name of owner 3OWNER3_FIRST_NAME: First name of owner 3OWNER3_MID_NAME: Middle name of owner 3FLOOR: Signifies which floor the condo is located",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 58536,
+      "num_points": 666675,
+      "size": 45378836
+    },
+    {
+      "_id": "5f092263b523b8527f35f9f8",
+      "name": "Riverside/RoadLinework",
+      "description": "This is the road linework for Riverside County, including cities. This data layer replaces centerlines as the main cartographic and geocoding engine in analysis and mapping. The differences between this layer and TLMA's centerline data are as follows:This layer follows aerial photos as evidence of street existence.This layer tries to eliminate \"paper streets\", which appear in legal documents but does not exist in real life.Graded tracts with centerlines will be considered as \"tentative\" rather than full validated streets.This layer will contain address ranges.This layer will update city streets as needed.CLASS: Roads classification.1 - Interstate2 - Interstate Ramp3 - US Highway4 - US Highway Ramp5 - CA Highway6 - CA Highway Ramp7 - Expressway8 - Expressway Ramp9 - Major Road10 - Arterial Street11 - Collector Street12 - Residential Street13 - Tentative",
+      "geometry_type": "MULTILINESTRING",
+      "num_features": 116631,
+      "num_points": 2514445,
+      "size": 95289160
+    },
+    {
+      "_id": "5f092291b523b8527f35f9f9",
+      "name": "Riverside/Parcel",
+      "description": "Parcel data to replace current Parcel Assessor data. Simplified schema.",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 811896,
+      "num_points": 16032285,
+      "size": 1182918692
+    },
+    {
+      "_id": "5f0922c8b523b8527f35f9fa",
+      "name": "Riverside/TieBooks",
+      "description": "Tie books referencing tied out found and set monumentation that represents centerline intersections and other miscellaneous locations",
+      "geometry_type": "MULTIPOINT",
+      "num_features": 7112,
+      "num_points": 13163,
+      "size": 3051164
+    },
+    {
+      "_id": "5f0922f6b523b8527f35f9fb",
+      "name": "Riverside/PLSS",
+      "description": "This data set of polygon features represents Public Land Survey System (PLSS) sections within the County of Riverside.\r\n\r\n",
+      "geometry_type": "POLYGON",
+      "num_features": 7349,
+      "num_points": 51889,
+      "size": 2042809
+    },
+    {
+      "_id": "5f09231cb523b8527f35f9fc",
+      "name": "Riverside/ParcelLines",
+      "description": "This data set of line feature represents assessor parcel lines in Riverside County",
+      "geometry_type": "MULTILINESTRING",
+      "num_features": 2504455,
+      "num_points": 13243022,
+      "size": 457324994
+    },
+    {
+      "_id": "5f092342b523b8527f35f9fd",
+      "name": "Riverside/CornerRecords",
+      "description": "Corner Records referencing found and set monumentation that represents centerline intersections, property corners and other miscellaneous locations.",
+      "geometry_type": "MULTIPOINT",
+      "num_features": 15517,
+      "num_points": 44714,
+      "size": 7209699
+    },
+    {
+      "_id": "5f092371b523b8527f35f9fe",
+      "name": "Riverside/IntersectionPoints",
+      "description": "Intersection points derived from the Centerline Feature Class. Used for locating Intersections programmatically using cross-street references.",
+      "geometry_type": "POINT",
+      "num_features": 64059,
+      "size": 13003977
+    },
+    {
+      "_id": "5f5136941e53f41c6854697c",
+      "name": "portotaxi",
+      "description": "An accurate dataset describing trajectories performed by all the 442 taxis running in the city of Porto, in Portugal",
+      "tags": "trajectory trajectories",
+      "geometry_type": "MULTIPOINT",
+      "num_features": 1710670,
+      "num_points": 83409386,
+      "size": 1996455500
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f60b",
+      "name": "F477/Broadband_1412",
+      "description": "Areas of broadband deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 771,
+      "num_points": 203227296,
+      "size": 3265470457
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f60c",
+      "name": "F477/Broadband_1512",
+      "description": "Areas of broadband deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 16826,
+      "num_points": 268853268,
+      "size": 4332310078
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f60d",
+      "name": "F477/Broadband_1606",
+      "description": "Areas of broadband deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 1101,
+      "num_points": 321631855,
+      "size": 5182037682
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f60e",
+      "name": "F477/Broadband_1612",
+      "description": "Areas of broadband deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 1136,
+      "num_points": 288223589,
+      "size": 4640296752
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f60f",
+      "name": "F477/Broadband_1706",
+      "description": "Areas of broadband deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 11489962,
+      "num_points": 357961533,
+      "size": 6777812047
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f610",
+      "name": "F477/Broadband_1712",
+      "description": "Areas of broadband deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 9392707,
+      "num_points": 367589497,
+      "size": 6763272416
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f611",
+      "name": "F477/Broadband_1806",
+      "description": "Areas of broadband deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 9639655,
+      "num_points": 395912698,
+      "size": 7416464160
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f612",
+      "name": "F477/Broadband_1812",
+      "description": "Areas of broadband deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 9563169,
+      "num_points": 394270517,
+      "size": 7386322150
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f613",
+      "name": "F477/Broadband_1906",
+      "description": "Areas of broadband deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 9327858,
+      "num_points": 393277947,
+      "size": 7174972321
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f614",
+      "name": "F477/Voice_1412",
+      "description": "Areas of voice service deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 688,
+      "num_points": 177382509,
+      "size": 2850565976
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f615",
+      "name": "F477/Voice_1512",
+      "description": "Areas of voice service deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 16665,
+      "num_points": 217655507,
+      "size": 3509473447
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f616",
+      "name": "F477/Voice_1606",
+      "description": "Areas of voice service deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 1077,
+      "num_points": 280914056,
+      "size": 4529253276
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f617",
+      "name": "F477/Voice_1612",
+      "description": "Areas of voice service deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 995,
+      "num_points": 257851579,
+      "size": 4153141180
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f618",
+      "name": "F477/Voice_1706",
+      "description": "Areas of voice service deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 6606385,
+      "num_points": 239002606,
+      "size": 4568824619
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f619",
+      "name": "F477/Voice_1712",
+      "description": "Areas of voice service deployments as reported to the FCC",
+      "geometry_type": "MULTIPOLYGON",
+      "num_features": 6950954,
+      "num_points": 252703144,
+      "size": 4675574397
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f61a",
+      "name": "F477/Voice_1806",
+      "description": "Areas of voice service deployments as reported to the FCC",
+      "geometry_type": "POLYGON",
+      "num_features": 2150704,
+      "num_points": 101087027,
+      "size": 2327366492
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f61b",
+      "name": "F477/Voice_1812",
+      "description": "Areas of voice service deployments as reported to the FCC",
+      "geometry_type": "POLYGON",
+      "num_features": 2309680,
+      "num_points": 104831099,
+      "size": 2439791112
+    },
+    {
+      "_id": "5f63df1fba5c44f663e5f61c",
+      "name": "F477/Voice_1906",
+      "description": "Areas of voice service deployments as reported to the FCC",
+      "geometry_type": "POLYGON",
+      "num_features": 2241104,
+      "num_points": 108409735,
+      "size": 1996382688
+    },
+    {
+      "_id": "5feb914e338c9852201863c4",
+      "description": "POI or location-based recommendation dataset Twitter-Foursquare",
+      "name": "yin/foursquare",
+      "tags": "foursquare checkin poi",
+      "geometry_type": "POINT",
+      "num_features": 375675,
+      "num_points": 973459,
+      "size": 72010303
+    },
+    {
+      "_id": "5febb0ba07ac625556b03385",
+      "description": "Cross-network Dataset or network alignment dataset",
+      "name": "yin/instagram-twitter",
+      "tags": "instagram twitter poi",
+      "geometry_type": "POINT",
+      "num_features": 876464,
+      "size": 81988158
+    },
+    {
+      "_id": "5febe1f08deea04fec28b277",
+      "description": "Gowalla is a location-based social networking website where users share their locations by checking-in. The friendship network is undirected and was collected using their public API, and consists of 196,591 nodes and 950,327 edges. We have collected a total of 6,442,890 check-ins of these users over the period of Feb. 2009 - Oct. 2010.",
+      "name": "stanford-gowalla",
+      "tags": "gowalla checkin stanford",
+      "geometry_type": "POINT",
+      "num_features": 6442892,
+      "size": 715314990
+    },
+    {
+      "_id": "5febeb468deea04fec28b278",
+      "description": "Brightkite was once a location-based social networking service provider where users shared their locations by checking-in. The friendship network was collected using their public API, and consists of 58,228 nodes and 214,078 edges. The network is originally directed but we have constructed a network with undirected edges when there is a friendship in both ways. We have also collected a total of 4,491,143 checkins of these users over the period of Apr. 2008 - Oct. 2010.\r\n\r\nCite: E. Cho, S. A. Myers, J. Leskovec. Friendship and Mobility: Friendship and Mobility: User Movement in Location-Based Social Networks ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), 2011.",
+      "name": "stanford-brightkite",
+      "tags": "Stanford poi checkin Brightkite",
+      "geometry_type": "POINT",
+      "num_features": 4747287,
+      "num_points": 4747281,
+      "size": 653398472
+    },
+    {
+      "_id": "5ffaa82acf8073056c930e7c",
+      "description": "Pickup and drop-off locations of bikes with anonymous user information",
+      "name": "citibike",
+      "geometry_type": "GEOMETRYCOLLECTION",
+      "num_features": 118704635,
+      "num_points": 118704635,
+      "size": 28486965473
+    },
+    {
+      "_id": "60c4f1e6ff25aa4e3d9798f7",
+      "description": "All OpenStreetMap nodes represent all nodes on the map",
+      "name": "osm21/all_nodes",
+      "geometry_type": "POINT",
+      "num_features": 6977697546,
+      "size": 955050363016
+    },
+    {
+      "_id": "60c4f246ff25aa4e3d9798f9",
+      "description": "All buildings extracted from OpenStreetMap",
+      "name": "osm21/buildings",
+      "geometry_type": "GEOMETRYCOLLECTION",
+      "num_features": 369990532,
+      "num_points": 2394685201,
+      "size": 100808955012
+    },
+    {
+      "_id": "60c4f25dff25aa4e3d9798fa",
+      "description": "All cemeteries extracted from OpenStreetMap",
+      "name": "osm21/cemetery",
+      "geometry_type": "GEOMETRYCOLLECTION",
+      "num_features": 402325,
+      "num_points": 4056888,
+      "size": 138280049
+    },
+    {
+      "_id": "60c4f292ff25aa4e3d9798fb",
+      "description": "All water areas extracted from OpenStreetMap including lakes, rivers, and swimming pools",
+      "name": "osm21/lakes",
+      "geometry_type": "GEOMETRYCOLLECTION",
+      "num_features": 14613785,
+      "num_points": 746141050,
+      "size": 14599334070
+    },
+    {
+      "_id": "60c4f2b1ff25aa4e3d9798fc",
+      "description": "All green areas extracted from OpenStreetMap including parks, forests, and green lawns",
+      "name": "osm21/parks",
+      "geometry_type": "GEOMETRYCOLLECTION",
+      "num_features": 42769620,
+      "num_points": 1155340643,
+      "size": 25308705450
+    },
+    {
+      "_id": "60c4f2c8ff25aa4e3d9798fd",
+      "description": "All points of interest extracted from OpenStreetMap",
+      "name": "osm21/pois",
+      "geometry_type": "POINT",
+      "num_features": 147331044,
+      "size": 33300376529
+    },
+    {
+      "_id": "60c4f2ecff25aa4e3d9798fe",
+      "description": "Boundaries of some postal code areas, e.g., cities, extracted from OpenStreetMap",
+      "name": "osm21/postal_codes",
+      "geometry_type": "GEOMETRYCOLLECTION",
+      "num_features": 236258,
+      "num_points": 95638099,
+      "size": 1620985749
+    },
+    {
+      "_id": "60c4f31eff25aa4e3d979900",
+      "description": "Recreational and sports areas extracted from OpenStreetMap",
+      "name": "osm21/sports",
+      "geometry_type": "GEOMETRYCOLLECTION",
+      "num_features": 4711868,
+      "num_points": 51325107,
+      "size": 1664939067
+    },
+    {
+      "_id": "62840a7d9e2bd77add8ef06d",
+      "description": "Bing Maps is releasing open building footprints around the world. We have detected 777M buildings from Bing Maps imagery between 2014 and 2021 including Maxar and Airbus imagery. The data is freely available for download and use under ODbL. This dataset complements our other releases.",
+      "name": "mlbuildings",
+      "geometry_type": "POLYGON",
+      "num_features": 776712641,
+      "num_points": 4521165875,
+      "size": 125155113588
+    },
+    {
+      "_id": "62943cd89e2bd77add8ef06f",
+      "description": "This dataset contains 11,334,866 computer-generated building footprints derived using Bing Maps algorithms on satellite imagery. Satellite imagery used for extraction is from our imagery partners Maxar Technologies among others.",
+      "name": "AUBuildings",
+      "geometry_type": "POLYGON",
+      "num_features": 11334866,
+      "num_points": 69398539,
+      "size": 1881147512
+    },
+    {
+      "_id": "62943d809e2bd77add8ef070",
+      "description": "This dataset contains 11,842,186 computer-generated building footprints in all Canadian provinces and territories. This data is freely available for download and use.",
+      "name": "CABuildings",
+      "geometry_type": "POLYGON",
+      "num_features": 11842186,
+      "num_points": 68706072,
+      "size": 1904565800
+    },
+    {
+      "_id": "62943dc79e2bd77add8ef071",
+      "description": "This dataset contains 17,942,345‬ computer generated building footprints derived using Bing Maps algorithms on satellite imagery. Satellite imagery used for Uganda and Tanzania extraction is from our imagery partner Maxar Technologies.",
+      "name": "UgTaBuildings",
+      "geometry_type": "POLYGON",
+      "num_features": 17942345,
+      "num_points": 94225654,
+      "size": 2727689924
+    },
+    {
+      "_id": "62943e329e2bd77add8ef072",
+      "description": "Bing Maps is releasing open building footprints dataset for countries in South America. We have detected 44.5 million buildings from Maxar imagery collected between 2020 and 2021 for regions encompassing approximately 50% of the South American population.",
+      "name": "SABuildings",
+      "geometry_type": "POLYGON",
+      "num_features": 44495865,
+      "num_points": 276154732,
+      "size": 7444194532
+    },
+    {
+      "_id": "62943ed89e2bd77add8ef074",
+      "description": "Bing Maps is releasing open building footprints in the Philippines, Indonesia, and Malaysia. We have detected 88,653,552 buildings from 2016-2020 Maxar imagery. The data is freely available for download and use under applicable license.",
+      "name": "IdMyPhBuildings",
+      "geometry_type": "POLYGON",
+      "num_features": 88653552,
+      "num_points": 505077400,
+      "size": 14109679936
+    },
+    {
+      "_id": "62a1039b4a16ab34cab6843b",
+      "description": "A dataset of building footprints to support social good applications. Building footprints are useful for a range of important applications, from population estimation, urban planning and humanitarian response, to environmental and climate science. This large-scale open dataset contains the outlines of buildings derived from high-resolution satellite imagery in order to support these types of uses. The project being based in Ghana, the current focus is on the continent of Africa.",
+      "name": "GoogleAFBuildings",
+      "geometry_type": "GEOMETRYCOLLECTION",
+      "num_features": 515686597,
+      "num_points": 2716573181,
+      "size": 103112283388
+    }
+  ]
+}

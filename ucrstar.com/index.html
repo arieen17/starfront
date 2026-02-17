@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UCR Star – Search UCR Star</title>
+    <link rel="icon" href="images/favicon32.png" type="image/png" />
+    <link
+      href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/home.css" type="text/css" />
+    <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <button
+            type="button"
+            class="sidebar-btn"
+            data-action="menu"
+            aria-label="Menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="sidebar-btn"
+            data-action="saved"
+            aria-label="Saved"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="sidebar-btn"
+            data-action="edit"
+            aria-label="Edit"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+              />
+            </svg>
+          </button>
+        </nav>
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-brand">
+          <img
+            src="images/circlelogo.png"
+            alt=""
+            class="brand-logo brand-logo-circle"
+          />
+          <span class="sidebar-copy">©UCR 2021</span>
+        </div>
+      </aside>
+
+      <div class="map-wrapper">
+        <div id="map"></div>
+
+        <div class="floating-nav">
+          <div class="search-wrap">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search UCR Star"
+              autocomplete="off"
+              aria-autocomplete="list"
+              aria-controls="search-suggestions"
+            />
+            <span class="search-icon" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="20"
+                height="20"
+              >
+                <path
+                  d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                />
+              </svg>
+            </span>
+            <div
+              class="search-suggestions hidden"
+              id="search-suggestions"
+              role="listbox"
+            ></div>
+          </div>
+          <nav
+            class="categories"
+            id="category-tags"
+            aria-label="Dataset categories"
+          ></nav>
+        </div>
+
+        <div class="map-controls">
+          <button
+            type="button"
+            class="location-btn"
+            aria-label="Current location"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"
+              />
+            </svg>
+          </button>
+          <button type="button" class="zoom-in" aria-label="Zoom in">+</button>
+          <button type="button" class="zoom-out" aria-label="Zoom out">
+            −
+          </button>
+        </div>
+
+        <footer class="map-footer">© UCR 2021</footer>
+
+        <!-- Work preview: inside map frame -->
+        <div class="preview-card hidden" id="dataset-preview">
+          <button type="button" class="preview-close" aria-label="Close">
+            &times;
+          </button>
+          <p class="preview-type" id="preview-type"></p>
+          <hr class="preview-divider" />
+          <ul class="preview-stats" id="preview-stats"></ul>
+          <p class="preview-desc-label">Description</p>
+          <p class="preview-desc" id="preview-desc"></p>
+          <div class="preview-actions">
+            <button
+              type="button"
+              class="preview-action-btn preview-share"
+              aria-label="Share"
+              title="Share link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"
+                />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="preview-action-btn preview-download"
+              aria-label="Download"
+              title="Download"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dataset list drawer (opens from menu) -->
+      <aside class="drawer" id="dataset-drawer" aria-hidden="true">
+        <div class="drawer-header">
+          <h2 class="drawer-title">Datasets</h2>
+          <button type="button" class="drawer-close" aria-label="Close">
+            &times;
+          </button>
+        </div>
+        <div class="drawer-list" id="dataset-list"></div>
+      </aside>
+      <div
+        class="drawer-backdrop"
+        id="drawer-backdrop"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="share-modal-overlay hidden"
+        id="share-modal-overlay"
+        aria-hidden="true"
+      >
+        <div
+          class="share-modal"
+          id="share-modal"
+          role="dialog"
+          aria-labelledby="share-modal-title"
+        >
+          <button type="button" class="share-modal-close" aria-label="Close">
+            &times;
+          </button>
+          <nav class="share-modal-tabs" role="tablist">
+            <button
+              type="button"
+              class="share-tab active"
+              data-tab="permalink"
+              role="tab"
+              aria-selected="true"
+            >
+              Permalink
+            </button>
+            <button
+              type="button"
+              class="share-tab"
+              data-tab="embed"
+              role="tab"
+              aria-selected="false"
+            >
+              Embed
+            </button>
+            <button
+              type="button"
+              class="share-tab"
+              data-tab="cite"
+              role="tab"
+              aria-selected="false"
+            >
+              Cite
+            </button>
+          </nav>
+          <div class="share-modal-content">
+            <section
+              class="share-tab-pane active"
+              id="share-permalink"
+              role="tabpanel"
+            >
+              <p class="share-instruction">
+                Share this link with your team members to access the current
+                dataset and view.
+              </p>
+              <div class="share-input-wrap">
+                <textarea
+                  readonly
+                  class="share-link-input"
+                  id="share-permalink-input"
+                  rows="2"
+                ></textarea>
+                <button
+                  type="button"
+                  class="share-copy-btn inside"
+                  aria-label="Copy to clipboard"
+                  title="Copy to clipboard"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="18"
+                    height="18"
+                  >
+                    <path
+                      d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </section>
+            <section
+              class="share-tab-pane hidden"
+              id="share-embed"
+              role="tabpanel"
+            >
+              <p class="share-instruction">
+                Copy and paste this code to embed the map with the current
+                dataset and view.
+              </p>
+              <div class="share-input-wrap">
+                <textarea
+                  readonly
+                  class="share-embed-code"
+                  id="share-embed-input"
+                  rows="4"
+                ></textarea>
+                <button
+                  type="button"
+                  class="share-copy-btn inside"
+                  aria-label="Copy to clipboard"
+                  title="Copy to clipboard"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="18"
+                    height="18"
+                  >
+                    <path
+                      d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </section>
+            <section
+              class="share-tab-pane hidden"
+              id="share-cite"
+              role="tabpanel"
+            >
+              <p class="share-instruction">
+                Cite this dataset in your research.
+              </p>
+              <div class="share-input-wrap">
+                <textarea
+                  readonly
+                  class="share-cite-text"
+                  id="share-cite-input"
+                  rows="6"
+                ></textarea>
+                <button
+                  type="button"
+                  class="share-copy-btn inside"
+                  aria-label="Copy to clipboard"
+                  title="Copy to clipboard"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="18"
+                    height="18"
+                  >
+                    <path
+                      d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/home.js"></script>
+  </body>
+</html>
