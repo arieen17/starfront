@@ -23,7 +23,7 @@
   transform: translate(-50%, -50%);
 }
 
-/* ----- Responsive: MapLibre attribution and controls ----- */
+/* ----- Responsive: ----- */
 @media (max-width: 768px) {
   .maplibregl-ctrl-bottom-right {
     bottom: 6px;
