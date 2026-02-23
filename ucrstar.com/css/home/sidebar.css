@@ -1,4 +1,4 @@
-/* ----- Left sidebar ----- */
+/* ----- Sidebar: ----- */
 .sidebar {
   width: 80px;
   flex-shrink: 0;
@@ -85,7 +85,7 @@
   padding: 0;
 }
 
-/* ----- Responsive: condense sidebar on smaller screens ----- */
+/* ----- Responsive: ----- */
 @media (max-width: 768px) {
   .sidebar {
     width: 64px;

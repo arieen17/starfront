@@ -134,6 +134,187 @@
             −
           </button>
         </div>
+        <!-- AI Styling Tool: pop-up module (fake data, no chat implementation) -->
+        <div class="ai-styling-side-panel" id="ai-styling-side-panel" aria-hidden="true">
+          <header class="ai-styling-header">
+            <div class="ai-styling-header-left">
+              <img src="images/color_dropper.svg" alt="" class="ai-styling-header-icon" width="20" height="20" />
+              <span class="ai-styling-header-title">AI Styling Tool</span>
+            </div>
+            <div class="ai-styling-header-actions">
+              <button type="button" class="ai-styling-header-btn" id="ai-panel-dev-btn" title="Dev Mode">&lt;/&gt;</button>
+              <button type="button" class="ai-styling-header-btn" id="ai-panel-share-btn" title="Share">
+                <img src="images/share.svg" alt="" width="18" height="16" />
+              </button>
+            </div>
+          </header>
+          <div class="ai-styling-body">
+            <p class="ai-styling-prompt">Get started with your personalization below:</p>
+            <div class="ai-styling-chat-row ai-styling-chat-user">
+              <p class="ai-styling-msg">Create a cool toned palette for my map.</p>
+            </div>
+            <div class="ai-styling-chat-row ai-styling-chat-bot">
+              <img src="images/chat_logo.svg" alt="" class="ai-styling-chat-avatar" width="32" height="32" />
+              <p class="ai-styling-msg">Sure! Here is a color palette for your map:</p>
+            </div>
+            <div class="ai-styling-options">
+              <div class="ai-styling-option">
+                <span class="ai-styling-option-label">Option 1</span>
+                <div class="ai-styling-swatches ai-styling-swatches-3">
+                  <span style="background:#fff;border:1px solid #ddd"></span><span style="background:#e8a598"></span><span style="background:#f0c674"></span>
+                </div>
+              </div>
+              <div class="ai-styling-option">
+                <span class="ai-styling-option-label">Option 2</span>
+                <div class="ai-styling-swatches ai-styling-swatches-3">
+                  <span style="background:#7ec8c0"></span><span style="background:#1976d2"></span><span style="background:#8b9f6e"></span>
+                </div>
+              </div>
+            </div>
+            <div class="ai-styling-input-wrap ai-styling-describe">
+              <input type="text" class="ai-styling-input" id="ai-styling-describe" placeholder="Describe the colors and icons you love..." />
+              <button type="button" class="ai-styling-send" aria-label="Send">&#8593;</button>
+            </div>
+          </div>
+        </div>
+        <!-- Chatbot: animated trigger + panel with dev mode & share -->
+        <div class="chatbot-wrap" id="chatbot-wrap">
+          <button
+            type="button"
+            class="chatbot-trigger"
+            id="chatbot-trigger"
+            aria-label="Open assistant"
+            aria-expanded="false"
+            aria-controls="chatbot-panel"
+          >
+            <img
+              src="images/chatbot-icon.svg"
+              alt=""
+              class="chatbot-trigger-icon"
+              width="24"
+              height="24"
+            />
+          </button>
+          <div
+            class="chatbot-panel"
+            id="chatbot-panel"
+            role="dialog"
+            aria-label="Assistant"
+          >
+            <div class="chatbot-header">
+              <h3 class="chatbot-title">Assistant</h3>
+              <div class="chatbot-header-actions">
+                <button
+                  type="button"
+                  class="chatbot-dev-toggle"
+                  id="chatbot-dev-toggle"
+                  aria-pressed="false"
+                  title="Toggle dev mode"
+                >
+                  Dev
+                </button>
+                <button
+                  type="button"
+                  class="chatbot-close"
+                  id="chatbot-close"
+                  aria-label="Close"
+                >
+                  &times;
+                </button>
+              </div>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+              <p class="chatbot-msg bot">
+                Hi. I can help you <strong>share</strong> the current view or
+                open the dataset list.
+              </p>
+            </div>
+            <div class="chatbot-dev-block hidden" id="chatbot-dev-block">
+              <pre class="chatbot-dev-info" id="chatbot-dev-info"></pre>
+            </div>
+            <div class="chatbot-quick-actions">
+              <button
+                type="button"
+                class="chatbot-action-btn"
+                id="chatbot-action-share"
+              >
+                Share link
+              </button>
+            </div>
+            <div class="chatbot-ai-styling-teaser">
+              <button type="button" class="chatbot-action-btn ai-styling-open-btn" id="ai-styling-open-btn">
+                <svg class="ai-styling-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                AI Styling Tool
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Share modal: bigger, centered (from AI header Share) -->
+        <div class="share-style-overlay hidden" id="share-style-overlay" aria-hidden="true">
+          <div class="share-style-modal share-style-modal-big" id="share-style-modal" role="dialog" aria-labelledby="share-style-title">
+            <header class="share-style-modal-header">
+              <div class="share-style-modal-header-left">
+                <img src="images/share.svg" alt="" class="share-style-header-icon" width="20" height="18" />
+                <h3 class="share-style-title" id="share-style-title">Share</h3>
+              </div>
+              <div class="share-style-modal-header-actions">
+                <button type="button" class="share-style-close" id="share-style-close" aria-label="Close">&times;</button>
+              </div>
+            </header>
+            <div class="share-style-modal-body">
+              <div class="share-style-url-block">
+                <p class="share-style-url-text" id="share-style-url-input">https://star.cs.ucr.edu/?OSM2015/buildings#center=33.88022,-117.96362&amp;zoom=16</p>
+                <button type="button" class="share-style-copy-inline" id="share-style-copy-inline" aria-label="Copy link" title="Copy">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dev Mode modal: bigger, centered (from AI header Dev Mode) -->
+        <div class="dev-style-overlay hidden" id="dev-style-overlay" aria-hidden="true">
+          <div class="dev-style-modal dev-style-modal-big" id="dev-style-modal" role="dialog" aria-labelledby="dev-style-title">
+            <header class="dev-style-modal-header">
+              <div class="dev-style-modal-header-left">
+                <span class="dev-style-header-icon">&lt;/&gt;</span>
+                <h3 class="dev-style-title" id="dev-style-title">Dev Mode</h3>
+              </div>
+              <div class="dev-style-modal-header-actions">
+                <button type="button" class="dev-style-header-icon-btn" id="dev-style-edit-btn" aria-label="Edit" title="Edit">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                </button>
+                <button type="button" class="dev-style-header-icon-btn" id="dev-style-copy-btn" aria-label="Copy code" title="Copy">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                </button>
+              </div>
+            </header>
+            <div class="dev-style-modal-body">
+              <p class="dev-style-code-label">Code</p>
+              <div class="dev-style-code-slot">
+              <pre class="dev-style-code" id="dev-style-code">// Apply selected color option to map layer (Option 2)
+const colorOption = {
+  fill: ['#7ec8c0', '#1976d2', '#8b9f6e'],
+  outline: '#2d5a4a'
+};
+
+map.setPaintProperty('buildings-fill', 'fill-color', colorOption.fill[0]);
+map.setPaintProperty('buildings-fill', 'fill-outline-color', colorOption.outline);
+
+// Optional: cycle fill by attribute for multi-color
+map.setPaintProperty('buildings-fill', 'fill-color', [
+  'match', ['get', 'type'],
+  'residential', colorOption.fill[0],
+  'commercial', colorOption.fill[1],
+  colorOption.fill[2]
+]);</pre>
+              <textarea id="dev-style-code-edit" class="dev-style-code-edit hidden" spellcheck="false" aria-label="Edit code"></textarea>
+              </div>
+              <button type="button" class="dev-style-save-btn" id="dev-style-save-btn">Save</button>
+            </div>
+          </div>
+        </div>
 
         <footer class="map-footer">© UCR 2021</footer>
 

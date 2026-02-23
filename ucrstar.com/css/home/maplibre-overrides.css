@@ -12,7 +12,7 @@
   margin-right: 0;
 }
 
-/* Search result marker (red pin after geocode) */
+/* Search result marker: */
 .search-result-marker {
   width: 20px;
   height: 20px;

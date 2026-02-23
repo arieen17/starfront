@@ -1,4 +1,4 @@
-/* ----- Floating nav: no container background; only search + tags have their own pill style ----- */
+/* ----- Floating nav: ----- */
 .floating-nav {
   position: absolute;
   top: 16px;
@@ -176,7 +176,7 @@
   opacity: 0.9;
 }
 
-/* ----- More → categories dropdown (fixed so it never moves the nav) ----- */
+/* ----- More → categories dropdown: ----- */
 .categories-more-wrap {
   position: relative;
   flex-shrink: 0;
@@ -249,7 +249,7 @@
   background: #e5e7eb;
 }
 
-/* ----- Responsive: condense pills and nav at smaller widths ----- */
+/* ----- Responsive: ----- */
 @media (max-width: 768px) {
   .floating-nav {
     top: 10px;

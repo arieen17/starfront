@@ -133,7 +133,10 @@
   color: #333;
   font-size: 14px;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    color 0.2s;
   text-align: left;
 }
 
@@ -253,7 +256,7 @@
   color: #1a1a1a;
 }
 
-/* ----- Download modal: format pills stack on mobile ----- */
+/* ----- Download modal: ----- */
 @media (max-width: 540px) {
   .download-format-buttons {
     width: 100%;
