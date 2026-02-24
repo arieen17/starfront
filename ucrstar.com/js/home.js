@@ -31,8 +31,8 @@
       document.querySelector("script[data-dataset-base]")?.dataset
         ?.datasetBase || "";
     if (base) return base + "dataset.json";
-    var useApi =
-      document.querySelector("script[data-dataset-api]")?.dataset?.datasetApi;
+    var useApi = document.querySelector("script[data-dataset-api]")?.dataset
+      ?.datasetApi;
     if (useApi !== "false" && useApi !== "0") {
       return UCR_STAR_API + "/datasets";
     }
@@ -46,15 +46,7 @@
 
   function getDatasetGeometryUrl(name, mbr) {
     if (!name || !mbr || mbr.length < 4) return null;
-    var q =
-      "mbr=" +
-      mbr[0] +
-      "," +
-      mbr[1] +
-      "," +
-      mbr[2] +
-      "," +
-      mbr[3];
+    var q = "mbr=" + mbr[0] + "," + mbr[1] + "," + mbr[2] + "," + mbr[3];
     return (
       UCR_STAR_API +
       "/datasets/" +
@@ -177,7 +169,8 @@
         var card = document.getElementById("dataset-preview");
         if (card && !card.classList.contains("hidden")) {
           var idx = parseInt(card.getAttribute("data-index"), 10);
-          if (!isNaN(idx) && datasets[idx]) updateDatasetExtentOnMap(datasets[idx]);
+          if (!isNaN(idx) && datasets[idx])
+            updateDatasetExtentOnMap(datasets[idx]);
         }
       }
     });
@@ -340,8 +333,7 @@
       .then(function (r) {
         if (!r.ok) throw new Error(r.status);
         var ct = r.headers.get("content-type") || "";
-        if (ct.indexOf("application/json") !== -1)
-          return r.json();
+        if (ct.indexOf("application/json") !== -1) return r.json();
         return r.arrayBuffer().then(function (buf) {
           if (buf.byteLength < 2) return null;
           var u8 = new Uint8Array(buf);
@@ -349,14 +341,19 @@
             return new Promise(function (resolve, reject) {
               if (typeof DecompressionStream !== "undefined") {
                 var ds = new DecompressionStream("gzip");
-                new Response(buf).body.pipeThrough(ds).getReader().read().then(function (result) {
-                  try {
-                    var dec = new TextDecoder().decode(result.value);
-                    resolve(JSON.parse(dec));
-                  } catch (e) {
-                    reject(e);
-                  }
-                }).catch(reject);
+                new Response(buf).body
+                  .pipeThrough(ds)
+                  .getReader()
+                  .read()
+                  .then(function (result) {
+                    try {
+                      var dec = new TextDecoder().decode(result.value);
+                      resolve(JSON.parse(dec));
+                    } catch (e) {
+                      reject(e);
+                    }
+                  })
+                  .catch(reject);
               } else {
                 reject(new Error("gzip not supported"));
               }
@@ -366,10 +363,12 @@
         });
       })
       .then(function (geojson) {
-        if (geojson && (geojson.features || geojson.type === "FeatureCollection"))
+        if (
+          geojson &&
+          (geojson.features || geojson.type === "FeatureCollection")
+        )
           onDone(geojson);
-        else
-          onDone(null);
+        else onDone(null);
       })
       .catch(function () {
         onDone(null);
@@ -571,7 +570,7 @@
     if (!el || !btn) return;
     var r = btn.getBoundingClientRect();
     el.style.left = r.left + "px";
-    el.style.top = (r.bottom + 6) + "px";
+    el.style.top = r.bottom + 6 + "px";
   }
 
   function toggleCategoriesDropdown() {
@@ -625,6 +624,7 @@
         return r.json();
       })
       .then(function (data) {
+        console.log("working", data);
         allDatasets = data.datasets || [];
         renderCategoryTags();
         datasets = allDatasets.slice();
@@ -958,10 +958,21 @@
       var center = map.getCenter();
       var zoom = map.getZoom();
       var b = map.getBounds();
-      lines.push("map.center: " + center.lng.toFixed(4) + ", " + center.lat.toFixed(4));
+      lines.push(
+        "map.center: " + center.lng.toFixed(4) + ", " + center.lat.toFixed(4),
+      );
       lines.push("map.zoom: " + zoom.toFixed(1));
       if (b) {
-        lines.push("map.bounds: " + b.getWest().toFixed(4) + "," + b.getSouth().toFixed(4) + " " + b.getEast().toFixed(4) + "," + b.getNorth().toFixed(4));
+        lines.push(
+          "map.bounds: " +
+            b.getWest().toFixed(4) +
+            "," +
+            b.getSouth().toFixed(4) +
+            " " +
+            b.getEast().toFixed(4) +
+            "," +
+            b.getNorth().toFixed(4),
+        );
       }
     }
     var card = document.getElementById("dataset-preview");
@@ -985,6 +996,18 @@
     var devBlock = document.getElementById("chatbot-dev-block");
     var devInfoEl = document.getElementById("chatbot-dev-info");
     var shareBtn = document.getElementById("chatbot-action-share");
+    var triggerIcon = trigger
+      ? trigger.querySelector(".chatbot-trigger-icon")
+      : null;
+    var aiHeaderIcon = document.querySelector(".ai-styling-header-icon");
+    var triggerDefaultIconSrc =
+      triggerIcon && triggerIcon.getAttribute
+        ? triggerIcon.getAttribute("src")
+        : null;
+    var triggerAiIconSrc =
+      aiHeaderIcon && aiHeaderIcon.getAttribute
+        ? aiHeaderIcon.getAttribute("src")
+        : null;
 
     function isOpen() {
       return panel && panel.classList.contains("open");
@@ -996,7 +1019,12 @@
       if (trigger) {
         trigger.setAttribute("aria-expanded", "true");
       }
-      if (devToggle && devToggle.getAttribute("aria-pressed") === "true" && devBlock && devInfoEl) {
+      if (
+        devToggle &&
+        devToggle.getAttribute("aria-pressed") === "true" &&
+        devBlock &&
+        devInfoEl
+      ) {
         devInfoEl.textContent = getChatbotDevInfo();
       }
     }
@@ -1042,6 +1070,18 @@
     var shareStyleClose = document.getElementById("share-style-close");
     var shareStyleUrlInput = document.getElementById("share-style-url-input");
 
+    function updateTriggerExpandedAndIcon(isExpanded) {
+      if (trigger) {
+        trigger.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+      if (triggerIcon && triggerDefaultIconSrc && triggerAiIconSrc) {
+        triggerIcon.setAttribute(
+          "src",
+          isExpanded ? triggerAiIconSrc : triggerDefaultIconSrc,
+        );
+      }
+    }
+
     function openShareStyleModal() {
       if (!shareStyleOverlay) return;
       if (shareStyleUrlInput) {
@@ -1050,16 +1090,30 @@
         var datasetName = "";
         if (card && !card.classList.contains("hidden")) {
           var idx = parseInt(card.getAttribute("data-index"), 10);
-          if (!isNaN(idx) && typeof datasets !== "undefined" && datasets[idx] && datasets[idx].name)
+          if (
+            !isNaN(idx) &&
+            typeof datasets !== "undefined" &&
+            datasets[idx] &&
+            datasets[idx].name
+          )
             datasetName = datasets[idx].name;
         }
         var hash = "";
         if (typeof map !== "undefined" && map) {
           var center = map.getCenter();
           if (center)
-            hash = "#center=" + center.lat.toFixed(5) + "," + center.lng.toFixed(5) + "&zoom=" + Math.round(map.getZoom());
+            hash =
+              "#center=" +
+              center.lat.toFixed(5) +
+              "," +
+              center.lng.toFixed(5) +
+              "&zoom=" +
+              Math.round(map.getZoom());
         }
-        shareStyleUrlInput.textContent = base + (datasetName ? "?" + encodeURIComponent(datasetName) : "") + hash;
+        shareStyleUrlInput.textContent =
+          base +
+          (datasetName ? "?" + encodeURIComponent(datasetName) : "") +
+          hash;
       }
       shareStyleOverlay.classList.remove("hidden");
       shareStyleOverlay.setAttribute("aria-hidden", "false");
@@ -1075,9 +1129,12 @@
     function copyToClipboard(text) {
       if (!text) return;
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function () {}, function () {
-          copyFallback(text);
-        });
+        navigator.clipboard.writeText(text).then(
+          function () {},
+          function () {
+            copyFallback(text);
+          },
+        );
       } else {
         copyFallback(text);
       }
@@ -1097,17 +1154,21 @@
     }
     function copyShareStyleUrl() {
       if (!shareStyleUrlInput) return;
-      var text = shareStyleUrlInput.textContent || shareStyleUrlInput.innerText || "";
+      var text =
+        shareStyleUrlInput.textContent || shareStyleUrlInput.innerText || "";
       copyToClipboard(text);
     }
 
-    if (shareStyleClose) shareStyleClose.addEventListener("click", closeShareStyleModal);
+    if (shareStyleClose)
+      shareStyleClose.addEventListener("click", closeShareStyleModal);
     if (shareStyleOverlay) {
       shareStyleOverlay.addEventListener("click", function (e) {
         if (e.target === shareStyleOverlay) closeShareStyleModal();
       });
     }
-    document.getElementById("share-style-copy-inline")?.addEventListener("click", copyShareStyleUrl);
+    document
+      .getElementById("share-style-copy-inline")
+      ?.addEventListener("click", copyShareStyleUrl);
 
     var devStyleOverlay = document.getElementById("dev-style-overlay");
     var devStyleCode = document.getElementById("dev-style-code");
@@ -1116,7 +1177,11 @@
 
     function openDevStyleModal() {
       if (!devStyleOverlay) return;
-      if (devStyleCodeEdit && !devStyleCodeEdit.classList.contains("hidden") && devStyleCode) {
+      if (
+        devStyleCodeEdit &&
+        !devStyleCodeEdit.classList.contains("hidden") &&
+        devStyleCode
+      ) {
         devStyleCode.textContent = devStyleCodeEdit.value;
         devStyleCode.classList.remove("hidden");
         devStyleCodeEdit.classList.add("hidden");
@@ -1138,9 +1203,12 @@
       });
     }
     function devStyleCopyText() {
-      var text = (devStyleCodeEdit && !devStyleCodeEdit.classList.contains("hidden"))
-        ? devStyleCodeEdit.value
-        : (devStyleCode ? devStyleCode.textContent : "");
+      var text =
+        devStyleCodeEdit && !devStyleCodeEdit.classList.contains("hidden")
+          ? devStyleCodeEdit.value
+          : devStyleCode
+            ? devStyleCode.textContent
+            : "";
       copyToClipboard(text);
     }
 
@@ -1159,29 +1227,41 @@
       }
     }
 
-    document.getElementById("dev-style-copy-btn")?.addEventListener("click", devStyleCopyText);
-    if (devStyleEditBtn) devStyleEditBtn.addEventListener("click", toggleDevStyleEdit);
-    document.getElementById("dev-style-save-btn")?.addEventListener("click", function () {
-      if (devStyleCodeEdit && !devStyleCodeEdit.classList.contains("hidden") && devStyleCode) {
-        devStyleCode.textContent = devStyleCodeEdit.value;
-        devStyleCode.classList.remove("hidden");
-        devStyleCodeEdit.classList.add("hidden");
-      }
-      closeDevStyleModal();
-    });
+    document
+      .getElementById("dev-style-copy-btn")
+      ?.addEventListener("click", devStyleCopyText);
+    if (devStyleEditBtn)
+      devStyleEditBtn.addEventListener("click", toggleDevStyleEdit);
+    document
+      .getElementById("dev-style-save-btn")
+      ?.addEventListener("click", function () {
+        if (
+          devStyleCodeEdit &&
+          !devStyleCodeEdit.classList.contains("hidden") &&
+          devStyleCode
+        ) {
+          devStyleCode.textContent = devStyleCodeEdit.value;
+          devStyleCode.classList.remove("hidden");
+          devStyleCodeEdit.classList.add("hidden");
+        }
+        closeDevStyleModal();
+      });
 
     var aiStylingPanel = document.getElementById("ai-styling-side-panel");
     var aiStylingOpenBtn = document.getElementById("ai-styling-open-btn");
     var aiPanelDevBtn = document.getElementById("ai-panel-dev-btn");
     var aiPanelShareBtn = document.getElementById("ai-panel-share-btn");
 
-    if (aiPanelShareBtn) aiPanelShareBtn.addEventListener("click", openShareStyleModal);
-    if (aiPanelDevBtn) aiPanelDevBtn.addEventListener("click", openDevStyleModal);
+    if (aiPanelShareBtn)
+      aiPanelShareBtn.addEventListener("click", openShareStyleModal);
+    if (aiPanelDevBtn)
+      aiPanelDevBtn.addEventListener("click", openDevStyleModal);
 
     if (aiStylingOpenBtn && aiStylingPanel) {
       aiStylingOpenBtn.addEventListener("click", function () {
         aiStylingPanel.classList.add("open");
         aiStylingPanel.setAttribute("aria-hidden", "false");
+        updateTriggerExpandedAndIcon(true);
       });
     }
     if (trigger && aiStylingPanel) {
@@ -1194,7 +1274,7 @@
           aiStylingPanel.classList.add("open");
           aiStylingPanel.setAttribute("aria-hidden", "false");
         }
-        trigger.setAttribute("aria-expanded", panelOpen ? "false" : "true");
+        updateTriggerExpandedAndIcon(!panelOpen);
       });
     }
   }
@@ -1275,7 +1355,9 @@
       "/download." +
       format;
     if (scope === "visible" && mbr) {
-      return base + "?mbr=" + mbr[0] + "," + mbr[1] + "," + mbr[2] + "," + mbr[3];
+      return (
+        base + "?mbr=" + mbr[0] + "," + mbr[1] + "," + mbr[2] + "," + mbr[3]
+      );
     } else if (scope === "region" && region) {
       return base + "?region=" + encodeURIComponent(region);
     }
@@ -1299,7 +1381,9 @@
     if (!d || !d.name) return;
     currentDownloadScope = "visible";
     currentDownloadRegion = null;
-    document.getElementById("download-modal-overlay")?.classList.remove("hidden");
+    document
+      .getElementById("download-modal-overlay")
+      ?.classList.remove("hidden");
     document
       .getElementById("download-modal-overlay")
       ?.setAttribute("aria-hidden", "false");
@@ -1342,7 +1426,13 @@
       mbr = getMapBounds();
       url = getDownloadUrl(d.name, format, "visible", mbr, null);
     } else if (currentDownloadScope === "region" && currentDownloadRegion) {
-      url = getDownloadUrl(d.name, format, "region", null, currentDownloadRegion);
+      url = getDownloadUrl(
+        d.name,
+        format,
+        "region",
+        null,
+        currentDownloadRegion,
+      );
     } else if (currentDownloadScope === "full") {
       url = getDownloadUrl(d.name, format, "full", null, null);
     }
@@ -1390,7 +1480,9 @@
     if (regionInput) {
       regionInput.addEventListener("input", function () {
         var q = (this.value || "").trim().toLowerCase();
-        var suggestionsEl = document.getElementById("download-region-suggestions");
+        var suggestionsEl = document.getElementById(
+          "download-region-suggestions",
+        );
         if (!suggestionsEl || !regionsData) return;
         suggestionsEl.innerHTML = "";
         if (!q) {
@@ -1433,7 +1525,9 @@
       });
       regionInput.addEventListener("blur", function () {
         setTimeout(function () {
-          var suggestionsEl = document.getElementById("download-region-suggestions");
+          var suggestionsEl = document.getElementById(
+            "download-region-suggestions",
+          );
           if (suggestionsEl) suggestionsEl.classList.remove("visible");
         }, 200);
       });
