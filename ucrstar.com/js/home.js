@@ -1,6 +1,5 @@
 /**
- * UCR Star – Home page (frontend only, no backend)
- * Map centered on Riverside, CA. Search UCR Star = filter datasets; Go to location = geocode and pan map.
+ * UCR Star – Home page
  */
 (function () {
   "use strict";
@@ -26,6 +25,16 @@
   const PLACE_TAG_REGEX = /^[a-zA-Z\s]+$/;
   const NAV_TAGS = ["Riverside", "OSM2015", "NE", "TIGER2018"];
 
+  /*
+   * UCR-Star REST API (see project API doc):
+   * - List:    GET  /datasets
+   * - Details: GET  /datasets/<_id>.json
+   * - Download (full):  GET /datasets/<name>/download.<format>   e.g. geojson.gz
+   * - Download (MBR):   GET /datasets/<name>/download.<format>?mbr=west,south,east,north
+   * - Regions: GET  /regions.json
+   * <name> uses path segments (e.g. Riverside/Landuse), <_id> is the list item _id.
+   */
+
   function getDatasetListUrl() {
     var base =
       document.querySelector("script[data-dataset-base]")?.dataset
@@ -41,18 +50,35 @@
 
   function getDatasetDetailsUrl(id) {
     if (!id) return null;
-    return UCR_STAR_API + "/datasets/" + encodeURIComponent(id) + ".json";
+    var path = nameToPath(id);
+    return UCR_STAR_API + "/datasets/" + path + ".json";
   }
 
-  function getDatasetGeometryUrl(name, mbr) {
+  function getDatasetGeometryBase() {
+    var proxy =
+      document.querySelector("script[data-dataset-proxy]")?.dataset
+        ?.datasetProxy || "";
+    if (proxy) return proxy.replace(/\/$/, "");
+    return UCR_STAR_API;
+  }
+
+  function nameToPath(name) {
+    if (!name) return "";
+    return name.split("/").map(encodeURIComponent).join("/");
+  }
+
+  function getDatasetViewUrl(name, mbr) {
     if (!name || !mbr || mbr.length < 4) return null;
-    var q = "mbr=" + mbr[0] + "," + mbr[1] + "," + mbr[2] + "," + mbr[3];
+    var base = getDatasetGeometryBase();
+    var path = nameToPath(name);
+    var mbrStr = mbr[0] + "," + mbr[1] + "," + mbr[2] + "," + mbr[3];
     return (
-      UCR_STAR_API +
+      base +
       "/datasets/" +
-      encodeURIComponent(name) +
-      "/download.geojson.gz?" +
-      q
+      path +
+      "/features/view.json?mbr=" +
+      mbrStr +
+      "&returnGeometry=true"
     );
   }
 
@@ -119,9 +145,9 @@
               ["literal", ["Polygon", "MultiPolygon"]],
             ],
             paint: {
-              "fill-color": "#f5f5f5",
-              "fill-opacity": 0.15,
-              "fill-outline-color": "#1a1a1a",
+              "fill-color": "#e8f5e9",
+              "fill-opacity": 0.35,
+              "fill-outline-color": "#000000",
               "fill-antialias": true,
             },
           },
@@ -138,10 +164,8 @@
               ["literal", ["LineString", "MultiLineString"]],
             ],
             paint: {
-              "line-color": "#1a1a1a",
+              "line-color": "#000000",
               "line-width": 1.25,
-              "line-join": "round",
-              "line-cap": "round",
             },
           },
           firstSymbolLayerId,
@@ -268,6 +292,7 @@
       return;
     }
     geomSource.setData({ type: "FeatureCollection", features: [] });
+    removeDatasetTileLayer();
     var ext = getDatasetExtent(d);
     if (ext) {
       var spanLon = ext[2] - ext[0];
@@ -289,7 +314,7 @@
             { padding: 40, duration: 500 },
           );
         }
-        fetchDatasetGeometry(d.name, ext, function (geojson) {
+        fetchDatasetGeometry(d, ext, function (geojson) {
           if (!map || !geomSource) return;
           var fc =
             geojson &&
@@ -315,6 +340,7 @@
     } else {
       source.setData({ type: "FeatureCollection", features: [] });
     }
+    updateDatasetTileLayer(d);
   }
 
   function clearDatasetExtentOnMap() {
@@ -324,55 +350,152 @@
     var geomSource = map.getSource("dataset-geometry");
     if (geomSource)
       geomSource.setData({ type: "FeatureCollection", features: [] });
+    removeDatasetTileLayer();
   }
 
-  function fetchDatasetGeometry(name, mbr, onDone) {
-    var url = getDatasetGeometryUrl(name, mbr);
-    if (!url || !onDone) return;
-    fetch(url)
-      .then(function (r) {
-        if (!r.ok) throw new Error(r.status);
-        var ct = r.headers.get("content-type") || "";
-        if (ct.indexOf("application/json") !== -1) return r.json();
-        return r.arrayBuffer().then(function (buf) {
-          if (buf.byteLength < 2) return null;
-          var u8 = new Uint8Array(buf);
-          if (u8[0] === 0x1f && u8[1] === 0x8b) {
-            return new Promise(function (resolve, reject) {
-              if (typeof DecompressionStream !== "undefined") {
-                var ds = new DecompressionStream("gzip");
-                new Response(buf).body
-                  .pipeThrough(ds)
-                  .getReader()
-                  .read()
-                  .then(function (result) {
-                    try {
-                      var dec = new TextDecoder().decode(result.value);
-                      resolve(JSON.parse(dec));
-                    } catch (e) {
-                      reject(e);
-                    }
-                  })
-                  .catch(reject);
-              } else {
-                reject(new Error("gzip not supported"));
-              }
-            });
-          }
-          return JSON.parse(new TextDecoder().decode(buf));
-        });
-      })
-      .then(function (geojson) {
-        if (
-          geojson &&
-          (geojson.features || geojson.type === "FeatureCollection")
-        )
-          onDone(geojson);
-        else onDone(null);
-      })
-      .catch(function () {
-        onDone(null);
+  function updateDatasetTileLayer(d) {
+    if (!map || !map.getStyle()) return;
+    removeDatasetTileLayer();
+    var viz = d && d.visualization;
+    if (!viz || viz.type !== "Tile" || !viz.url) return;
+    var base = getDatasetGeometryBase();
+    var tileUrl = viz.url.indexOf("http") === 0 ? viz.url : base + viz.url;
+    var layers = map.getStyle().layers;
+    var firstSymbolId = null;
+    for (var i = 0; i < layers.length; i++) {
+      if (layers[i].type === "symbol") {
+        firstSymbolId = layers[i].id;
+        break;
+      }
+    }
+    try {
+      map.addSource("dataset-tiles", {
+        type: "raster",
+        tiles: [tileUrl],
+        tileSize: 256,
       });
+      map.addLayer(
+        {
+          id: "dataset-tiles-layer",
+          type: "raster",
+          source: "dataset-tiles",
+          minzoom: 0,
+          maxzoom: 22,
+        },
+        firstSymbolId,
+      );
+    } catch (e) {}
+  }
+
+  function removeDatasetTileLayer() {
+    if (!map || !map.getStyle()) return;
+    try {
+      if (map.getLayer("dataset-tiles-layer"))
+        map.removeLayer("dataset-tiles-layer");
+      if (map.getSource("dataset-tiles")) map.removeSource("dataset-tiles");
+    } catch (e) {}
+  }
+
+  function fetchDatasetGeometry(dataset, mbr, onDone) {
+    var name = dataset && dataset.name;
+    if (!name || !mbr || mbr.length < 4 || !onDone) return;
+    var viewUrl = getDatasetViewUrl(name, mbr);
+
+    function tryViewJson(done) {
+      if (!viewUrl) return done(null);
+      var headers = { Accept: "application/json, application/geo+json" };
+      fetch(viewUrl, { headers: headers })
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        })
+        .then(function (data) {
+          var fc = toFeatureCollection(data);
+          if (fc && fc.features && fc.features.length > 0) return done(fc);
+          done(null);
+        })
+        .catch(function () {
+          done(null);
+        });
+    }
+
+    function getGeometry(obj) {
+      if (!obj) return null;
+      var g =
+        obj.geometry || obj.geom || obj.shape || obj.the_geom || obj.geojson;
+      if (
+        g &&
+        typeof g === "object" &&
+        (g.type === "Point" ||
+          g.type === "LineString" ||
+          g.type === "Polygon" ||
+          g.type === "MultiPoint" ||
+          g.type === "MultiLineString" ||
+          g.type === "MultiPolygon")
+      )
+        return g;
+      return null;
+    }
+
+    function toFeatureCollection(data) {
+      if (!data) return null;
+      function asFeature(obj) {
+        var geom = getGeometry(obj);
+        if (!geom) return null;
+        if (obj.type === "Feature") return obj;
+        var props = obj.properties || {};
+        if (obj.properties === undefined && obj.OBJECTID !== undefined) {
+          for (var k in obj)
+            if (
+              k !== "geometry" &&
+              k !== "geom" &&
+              k !== "shape" &&
+              k !== "the_geom" &&
+              k !== "geojson" &&
+              obj.hasOwnProperty(k)
+            )
+              props[k] = obj[k];
+        }
+        return { type: "Feature", geometry: geom, properties: props };
+      }
+      if (data.type === "FeatureCollection" && Array.isArray(data.features)) {
+        var normalized = data.features.map(asFeature).filter(Boolean);
+        if (normalized.length)
+          return { type: "FeatureCollection", features: normalized };
+      }
+      if (data.type === "Feature" && data.geometry)
+        return { type: "FeatureCollection", features: [data] };
+      if (getGeometry(data)) {
+        var single = asFeature(data);
+        if (single) return { type: "FeatureCollection", features: [single] };
+      }
+      var list =
+        data.features ||
+        data.results ||
+        data.data ||
+        data.records ||
+        (Array.isArray(data) ? data : null);
+      if (list && list.length) {
+        var features = list.map(asFeature).filter(Boolean);
+        if (features.length)
+          return { type: "FeatureCollection", features: features };
+      }
+      if (data && typeof data === "object" && !Array.isArray(data)) {
+        var vals = Object.values(data);
+        if (
+          vals.some(function (v) {
+            return v && typeof v === "object" && getGeometry(v);
+          })
+        ) {
+          var fromVals = vals.map(asFeature).filter(Boolean);
+          if (fromVals.length)
+            return { type: "FeatureCollection", features: fromVals };
+        }
+      }
+      return null;
+    }
+
+    tryViewJson(onDone);
   }
 
   function goToLocation(query) {
@@ -624,7 +747,6 @@
         return r.json();
       })
       .then(function (data) {
-        console.log("working", data);
         allDatasets = data.datasets || [];
         renderCategoryTags();
         datasets = allDatasets.slice();
@@ -1174,6 +1296,9 @@
     var devStyleCode = document.getElementById("dev-style-code");
     var devStyleCodeEdit = document.getElementById("dev-style-code-edit");
     var devStyleEditBtn = document.getElementById("dev-style-edit-btn");
+    var devStyleEditActions = document.getElementById("dev-style-edit-actions");
+    var devStyleViewActions = document.getElementById("dev-style-view-actions");
+    var devStyleCancelBtn = document.getElementById("dev-style-cancel-btn");
 
     function openDevStyleModal() {
       if (!devStyleOverlay) return;
@@ -1186,6 +1311,8 @@
         devStyleCode.classList.remove("hidden");
         devStyleCodeEdit.classList.add("hidden");
       }
+      if (devStyleEditActions) devStyleEditActions.classList.add("hidden");
+      if (devStyleViewActions) devStyleViewActions.classList.remove("hidden");
       devStyleOverlay.classList.remove("hidden");
       devStyleOverlay.setAttribute("aria-hidden", "false");
     }
@@ -1219,12 +1346,25 @@
         devStyleCode.textContent = devStyleCodeEdit.value;
         devStyleCode.classList.remove("hidden");
         devStyleCodeEdit.classList.add("hidden");
+        if (devStyleEditActions) devStyleEditActions.classList.add("hidden");
+        if (devStyleViewActions) devStyleViewActions.classList.remove("hidden");
       } else {
         devStyleCodeEdit.value = devStyleCode.textContent;
         devStyleCode.classList.add("hidden");
         devStyleCodeEdit.classList.remove("hidden");
+        if (devStyleEditActions) devStyleEditActions.classList.remove("hidden");
+        if (devStyleViewActions) devStyleViewActions.classList.add("hidden");
         devStyleCodeEdit.focus();
       }
+    }
+
+    function cancelDevStyleEdit() {
+      if (!devStyleCode || !devStyleCodeEdit) return;
+      devStyleCodeEdit.value = devStyleCode.textContent;
+      devStyleCode.classList.remove("hidden");
+      devStyleCodeEdit.classList.add("hidden");
+      if (devStyleEditActions) devStyleEditActions.classList.add("hidden");
+      if (devStyleViewActions) devStyleViewActions.classList.remove("hidden");
     }
 
     document
@@ -1232,6 +1372,11 @@
       ?.addEventListener("click", devStyleCopyText);
     if (devStyleEditBtn)
       devStyleEditBtn.addEventListener("click", toggleDevStyleEdit);
+    if (devStyleCancelBtn)
+      devStyleCancelBtn.addEventListener("click", cancelDevStyleEdit);
+    document
+      .getElementById("dev-style-close-btn")
+      ?.addEventListener("click", closeDevStyleModal);
     document
       .getElementById("dev-style-save-btn")
       ?.addEventListener("click", function () {
@@ -1243,8 +1388,10 @@
           devStyleCode.textContent = devStyleCodeEdit.value;
           devStyleCode.classList.remove("hidden");
           devStyleCodeEdit.classList.add("hidden");
+          if (devStyleEditActions) devStyleEditActions.classList.add("hidden");
+          if (devStyleViewActions)
+            devStyleViewActions.classList.remove("hidden");
         }
-        closeDevStyleModal();
       });
 
     var aiStylingPanel = document.getElementById("ai-styling-side-panel");
@@ -1348,17 +1495,14 @@
 
   function getDownloadUrl(datasetName, format, scope, mbr, region) {
     if (!datasetName || !format) return null;
-    var base =
-      UCR_STAR_API +
-      "/datasets/" +
-      encodeURIComponent(datasetName) +
-      "/download." +
-      format;
-    if (scope === "visible" && mbr) {
+    var path = nameToPath(datasetName);
+    var base = UCR_STAR_API + "/datasets/" + path + "/download." + format;
+    if (scope === "visible" && mbr && mbr.length >= 4) {
       return (
         base + "?mbr=" + mbr[0] + "," + mbr[1] + "," + mbr[2] + "," + mbr[3]
       );
-    } else if (scope === "region" && region) {
+    }
+    if (scope === "region" && region) {
       return base + "?region=" + encodeURIComponent(region);
     }
     return base;
